@@ -22,6 +22,7 @@
 /* Progress: Bulma override */
 /* Icon: specifics */
 /* Core Libs & Lib configs */
+
 @keyframes spinAround {
   from {
     transform: rotate(0deg);
