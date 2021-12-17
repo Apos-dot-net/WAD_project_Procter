@@ -1108,59 +1108,54 @@
               </tbody>
             </table>
 
-              <style>
-                .collapsible {
-                  background-color: #777;
-                  color: white;
-                  cursor: pointer;
-                  padding: 18px;
-                  width: 100%;
-                  border: none;
-                  text-align: left;
-                  outline: none;
-                  font-size: 15px;
-                }
+            <style>
+              .collapsible {
+                background-color: #777;
+                color: white;
+                cursor: pointer;
+                padding: 18px;
+                width: 100%;
+                border: none;
+                text-align: left;
+                outline: none;
+                font-size: 15px;
+              }
 
-                .active, .collapsible:hover {
-                  background-color: #555;
-                }
+              .active, .collapsible:hover {
+                background-color: #555;
+              }
 
-                .content {
-                  padding: 0 18px;
-                  display: none;
-                  overflow: hidden;
-                  background-color: #f1f1f1;
-                }
-              </style>
-              </head>
-              <body>
+              .content {
+                padding: 0 18px;
+                display: none;
+                overflow: hidden;
+                background-color: #f1f1f1;
+              }
+            </style>
 
+            <div class="container" style="text-align: center">
 
+              <button type="button" class="btn btn-success" data-toggle="collapse" data-target="#demo">
+                <span class="glyphicon glyphicon-plus-sign"></span> Next sem
+              </button>
+              <div id="demo" class="collapse">
+                BMSCE was founded in 1946 by B. M. Sreenivasaiah with 3 undergraduate courses (Mechanical, Civil & Electrical), claiming to be "the first private sector initiative in engineering education in India". Sreenivasaiah was followed by his son B. S. Narayan.[2]
+                B.M.S. College of Engineering (BMSCE) is a private engineering college in Basavanagudi, Bangalore, India. It was started in 1946 by Bhusanayana Mukundadas Sreenivasaiah and is run by the B.M.S. Educational Trust. It is affiliated with Visvesvaraya Technological University and became autonomous in 2008. BMSCE is located on Bull Temple Road, Basavanagudi, diagonally opposite to the famous Bull Temple. Though a private engineering college, it is partially funded by the Government of Karnataka.[1]
+                The College was accredited by National Assessment and Accreditation Council (NAAC) with highest grade of A++ in the Second Cycle : with a CGPA of 3.83 on a scale of four which is highest in the country. The re-accreditation status is valid from 28.03.2019 to 28.03.2024.[6] BMSCE was accredited by National Assessment and Accreditation Council (NAAC) with A++ grade.[7] Some of the college courses are accredited by the National Board of Accreditation (NBA).[8] The college is affiliated with Visvesvaraya Technological University.[9]
 
-
-              <div class="container" style="text-align: center">
-
-                <button type="button" class="btn btn-success" data-toggle="collapse" data-target="#demo">
-                  <span class="glyphicon glyphicon-plus-sign"></span> Next sem
-                </button>
-                <div id="demo" class="collapse">
-                  BMSCE was founded in 1946 by B. M. Sreenivasaiah with 3 undergraduate courses (Mechanical, Civil & Electrical), claiming to be "the first private sector initiative in engineering education in India". Sreenivasaiah was followed by his son B. S. Narayan.[2]
-                  B.M.S. College of Engineering (BMSCE) is a private engineering college in Basavanagudi, Bangalore, India. It was started in 1946 by Bhusanayana Mukundadas Sreenivasaiah and is run by the B.M.S. Educational Trust. It is affiliated with Visvesvaraya Technological University and became autonomous in 2008. BMSCE is located on Bull Temple Road, Basavanagudi, diagonally opposite to the famous Bull Temple. Though a private engineering college, it is partially funded by the Government of Karnataka.[1]
-                  The College was accredited by National Assessment and Accreditation Council (NAAC) with highest grade of A++ in the Second Cycle : with a CGPA of 3.83 on a scale of four which is highest in the country. The re-accreditation status is valid from 28.03.2019 to 28.03.2024.[6] BMSCE was accredited by National Assessment and Accreditation Council (NAAC) with A++ grade.[7] Some of the college courses are accredited by the National Board of Accreditation (NBA).[8] The college is affiliated with Visvesvaraya Technological University.[9]
-
-                </div>
               </div>
+            </div>
 
-              <script>
-                $(document).ready(function(){
-                  $("#demo").on("hide.bs.collapse", function(){
-                    $(".btn").html('<span class="glyphicon glyphicon-plus-sign"></span> Next sem');
-                  });
-                  $("#demo").on("show.bs.collapse", function(){
-                    $(".btn").html('<span class="glyphicon glyphicon-minus-sign"></span> Close');
-                  });
+            <script>
+              $(document).ready(function(){
+                $("#demo").on("hide.bs.collapse", function(){
+                  $(".btn").html('<span class="glyphicon glyphicon-plus-sign"></span> Next sem');
                 });
-              </script>
+                $("#demo").on("show.bs.collapse", function(){
+                  $(".btn").html('<span class="glyphicon glyphicon-minus-sign"></span> Close');
+                });
+              });
+            </script>
 
 
 
