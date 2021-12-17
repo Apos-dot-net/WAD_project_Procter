@@ -2526,7 +2526,7 @@ textarea {
 }
 
 html {
-  box-sizing: border-box;
+  box-sizing: border-box;display: block;
 }
 
 *, *::before, *::after {
