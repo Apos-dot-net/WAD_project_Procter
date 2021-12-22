@@ -31,7 +31,9 @@
     transform: rotate(359deg);
   }
 }
-
+bi bi-plus:hover{
+  color: red;
+}
 .delete, .modal-close, .b-radio.radio, .b-checkbox.checkbox, .switch, .button, .file, .breadcrumb, .pagination-previous,
 .pagination-next,
 .pagination-link,
