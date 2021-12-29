@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Profile - Admin One HTML - Bulma Admin Dashboard</title>
+  <title>Internship or Industrial Training</title>
 
   <!-- Bulma is included -->
   <link rel="stylesheet" href="css/main.min.css">
@@ -44,7 +44,7 @@
             </span>
           </a>
           <div class="navbar-dropdown">
-            <a href="profile.html" class="navbar-item is-active">
+            <a href="Profile.html" class="navbar-item">
               <span class="icon"><i class="mdi mdi-account"></i></span>
               <span>My Profile</span>
             </a>
@@ -64,7 +64,7 @@
           </div>
         </div>
         <div class="navbar-item has-dropdown has-dropdown-with-icons has-divider has-user-avatar is-hoverable">
-          <a class="navbar-link is-arrowless">
+          <a href="loginpage.html" class="navbar-link is-arrowless">
             <div class="is-user-avatar">
               <img src="https://avatars.dicebear.com/v2/initials/john-doe.svg" alt="John Doe">
             </div>
@@ -74,7 +74,7 @@
             <span class="icon"><i class="mdi mdi-chevron-down"></i></span>
           </a>
           <div class="navbar-dropdown">
-            <a href="profile.html" class="navbar-item is-active">
+            <a href="Profile.html" class="navbar-item">
               <span class="icon"><i class="mdi mdi-account"></i></span>
               <span>My Profile</span>
             </a>
@@ -114,7 +114,7 @@
       <p class="menu-label">General</p>
       <ul class="menu-list">
         <li>
-          <a href="index.html" class="has-icon">
+          <a href="Dashboard.html" class="has-icon">
             <span class="icon"><i class="mdi mdi-desktop-mac"></i></span>
             <span class="menu-item-label">Dashboard</span>
           </a>
@@ -135,7 +135,7 @@
           </a>
         </li>
         <li>
-          <a href="profile.html" class="is-active has-icon">
+          <a href="Profile.html" class="has-icon">
             <span class="icon"><i class="mdi mdi-account-circle"></i></span>
             <span class="menu-item-label">Profile</span>
           </a>
@@ -147,13 +147,13 @@
           </a>
         </li>
         <li>
-          <a href="InternshipForm.html" class="has-icon">
+          <a href="InternshipIndustrialTraining.html" class="has-icon">
             <span class="icon"><i class="mdi mdi-square-edit-outline"></i></span>
             <span class="menu-item-label">Internship/<br>Industrial Training</span>
           </a>
         </li>
         <li>
-          <a href="Scholarship.html" class="has-icon">
+          <a href="ScholarshipRecived.html" class="is-active has-icon">
             <span class="icon"><i class="mdi mdi-square-edit-outline"></i></span>
             <span class="menu-item-label">ScholarShip <br> Received</span>
           </a>
@@ -164,6 +164,7 @@
             <span class="menu-item-label">Soft-Skill training <br> and Placement</span>
           </a>
         </li>
+
         <li>
           <a class="has-icon has-dropdown-icon">
             <span class="icon"><i class="mdi mdi-view-list"></i></span>
@@ -174,12 +175,12 @@
           </a>
           <ul>
             <li>
-              <a href="">
+              <a href="InsideTheCollege.html">
                 <span>Inside the College</span>
               </a>
             </li>
             <li>
-              <a href="">
+              <a href="OutsideTheCollege.html">
                 <span>Outside the College</span>
               </a>
             </li>
@@ -263,7 +264,7 @@
         <div class="level-item">
           <ul>
             <li>Admin</li>
-            <li>Profile</li>
+            <li>Scholarship Received</li>
           </ul>
         </div>
       </div>
@@ -274,7 +275,7 @@
       <div class="level">
         <div class="level-left">
           <div class="level-item"><h1 class="title">
-            Profile
+            Scholarship Received
           </h1></div>
         </div>
         <div class="level-right" style="display: none;">
@@ -284,182 +285,138 @@
     </div>
   </section>
   <section class="section is-main-section">
-    <div class="tile is-ancestor">
-      <div class="tile is-parent">
-        <div class="card tile is-child">
-          <header class="card-header">
-            <p class="card-header-title">
-              <span class="icon"><i class="mdi mdi-account-circle default"></i></span>
-              Edit Profile
-            </p>
-          </header>
-          <div class="card-content">
-            <form>
-              <div class="field is-horizontal">
-                <div class="field-label is-normal"><label class="label">Avatar</label></div>
-                <div class="field-body">
-                  <div class="field">
-                    <div class="field file">
-                      <label class="upload control">
-                        <a class="button is-primary">
-                          <span class="icon"><i class="mdi mdi-upload default"></i></span>
-                          <span>Pick a file</span>
-                        </a>
-                        <input type="file">
-                      </label>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <hr>
-              <div class="field is-horizontal">
-                <div class="field-label is-normal">
-                  <label class="label">Name</label>
-                </div>
-                <div class="field-body">
-                  <div class="field">
-                    <div class="control">
-                      <label>
-                        <input type="text" autocomplete="on" name="name" value="John Doe" class="input" required>
-                      </label>
-                    </div>
-                    <p class="help">Required. Your name</p>
-                  </div>
-                </div>
-              </div>
-              <div class="field is-horizontal">
-                <div class="field-label is-normal">
-                  <label class="label">E-mail</label>
-                </div>
-                <div class="field-body">
-                  <div class="field">
-                    <div class="control">
-                      <label>
-                        <input type="email" autocomplete="on" name="email" value="user@example.com" class="input" required>
-                      </label>
-                    </div>
-                    <p class="help">Required. Your e-mail</p>
-                  </div>
-                </div>
-              </div>
-              <hr>
-              <div class="field is-horizontal">
-                <div class="field-label is-normal"></div>
-                <div class="field-body">
-                  <div class="field">
-                    <div class="control">
-                      <button type="submit" class="button is-primary">
-                        Submit
-                      </button>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </form>
-          </div>
-        </div>
-      </div>
-      <div class="tile is-parent">
-        <div class="card tile is-child">
-          <header class="card-header">
-            <p class="card-header-title">
-              <span class="icon"><i class="mdi mdi-account default"></i></span>
-              Profile
-            </p>
-          </header>
-          <div class="card-content">
-            <div class="is-user-avatar image has-max-width is-aligned-center">
-              <img src="https://avatars.dicebear.com/v2/initials/john-doe.svg" alt="John Doe">
-            </div>
-            <hr>
-            <div class="field">
-              <label class="label">Name</label>
-              <div class="control is-clearfix">
-                <label>
-                  <input type="text" readonly value="John Doe" class="input is-static">
-                </label>
-              </div>
-            </div>
-            <hr>
-            <div class="field">
-              <label class="label">E-mail</label>
-              <div class="control is-clearfix">
-                <label>
-                  <input type="text" readonly value="user@example.com" class="input is-static">
-                </label>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
     <div class="card">
       <header class="card-header">
         <p class="card-header-title">
-          <span class="icon"><i class="mdi mdi-lock default"></i></span>
-          Change Password
+          <span class="icon"><i class="mdi mdi-ballot"></i></span>
+          Form
         </p>
       </header>
       <div class="card-content">
-        <form>
+        <form method="get">
           <div class="field is-horizontal">
             <div class="field-label is-normal">
-              <label class="label">Current password</label>
+              <label class="label">Name of the Scholarship</label>
             </div>
             <div class="field-body">
               <div class="field">
                 <div class="control">
                   <label>
-                    <input type="password" name="password_current" autocomplete="current-password" class="input" required>
+                    <input class="input is-danger" type="text" placeholder="e.g. Foundation for Academic Excellence and Access">
                   </label>
                 </div>
-                <p class="help">Required. Your current password</p></div>
+                <p class="help is-danger">
+                  This field is required
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="field has-check is-horizontal">
+            <div class="field-label"><label class="label"></label></div>
+            <div class="field-body">
+              <div class="field">
+                <div class="field is-grouped-multiline is-grouped">
+                  <div class="control"><label class="b-radio radio"><input type="radio" name="sample-radio" value="one">
+                    <span class="check"></span>
+                    <span class="control-label">Private</span>
+                  </label>
+                  </div>
+                  <div class="control"><label class="b-radio radio"><input type="radio" name="sample-radio" value="two">
+                    <span class="check"></span>
+                    <span class="control-label">Institutional</span>
+                  </label>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="field is-horizontal">
+            <div class="field-label is-normal">
+              <label class="label">From</label>
+            </div>
+            <div class="field-body">
+              <div class="field">
+                <p class="control is-expanded has-icons-left">
+                  <label>
+                    <input class="input" type="date">
+                  </label>
+                  <span class="icon is-small is-left"><i class="mdi mdi-account"></i></span>
+                </p>
+              </div>
+              <div class="field-label is-normal">
+                <label class="label">To</label>
+              </div>
+              <div class="field">
+                <p class="control is-expanded has-icons-left has-icons-right">
+                  <label>
+                    <input class="input is-success" type="date">
+                  </label>
+                  <span class="icon is-small is-left"><i class="mdi mdi-mail"></i></span>
+                  <span class="icon is-small is-right"><i class="mdi mdi-check"></i></span>
+                </p>
+              </div>
             </div>
           </div>
           <hr>
           <div class="field is-horizontal">
-            <div class="field-label is-normal">
-              <label class="label">New password</label>
-            </div>
+            <div class="field-label"><label class="label">Grant</label></div>
             <div class="field-body">
-              <div class="field">
-                <div class="control">
-                  <label>
-                    <input type="password" autocomplete="new-password" name="password" class="input" required>
-                  </label>
+              <div class="field is-expanded">
+                <div class="field has-addons">
+                  <p class="control">
+                    <a class="button is-static">
+                      ₹
+                    </a>
+                  </p>
+                  <p class="control is-expanded">
+                    <label>
+                      <input class="input" type="number" placeholder="Amount">
+                    </label>
+                  </p>
                 </div>
-                <p class="help">Required. New password</p>
-              </div>
-            </div>
-          </div>
-          <div class="field is-horizontal">
-            <div class="field-label is-normal">
-              <label class="label">Confirm password</label>
-            </div>
-            <div class="field-body">
-              <div class="field">
-                <div class="control">
-                  <label>
-                    <input type="password" autocomplete="new-password" name="password_confirmation" class="input" required>
-                  </label>
-                </div>
-                <p class="help">Required. New password one more time</p>
               </div>
             </div>
           </div>
           <hr>
           <div class="field is-horizontal">
-            <div class="field-label is-normal"></div>
+            <div class="field-label is-normal"><label class="label">Upload your certificate</label></div>
             <div class="field-body">
               <div class="field">
-                <div class="control">
-                  <button type="submit" class="button is-primary">
-                    Submit
-                  </button>
+                <div class="field file">
+                  <label class="upload control">
+                    <a class="button is-primary">
+                      <span class="icon"><i class="mdi mdi-upload"></i></span>
+                      <span>Pick a file</span>
+                    </a>
+                    <input type="file">
+                  </label>
                 </div>
               </div>
             </div>
           </div>
+          <hr>
+          <div class="field is-horizontal">
+            <div class="field-label">
+              <!-- Left empty for spacing -->
+            </div>
+            <div class="field-body">
+              <div class="field">
+                <div class="field is-grouped">
+                  <div class="control">
+                    <button type="submit" class="button is-primary">
+                      <span>Submit</span>
+                    </button>
+                  </div>
+                  <div class="control">
+                    <button type="button" class="button is-primary is-outlined">
+                      <span>Reset</span>
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <hr>
         </form>
       </div>
     </div>
@@ -509,10 +466,10 @@
   </div>
 </div>
 
-<!-- Scripts below are for demo only -->
+<!-- Scripts below are for Admin only -->
 <script type="text/javascript" src="js/main.min.js"></script>
 
-<!-- Icons below are for demo only. Feel free to use any icon pack. Docs: https://bulma.io/documentation/elements/icon/ -->
+<!-- Icons below are for Admin only. Feel free to use any icon pack. Docs: https://bulma.io/documentation/elements/icon/ -->
 <link rel="stylesheet" href="https://cdn.materialdesignicons.com/4.9.95/css/materialdesignicons.min.css">
 </body>
 </html>

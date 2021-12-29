@@ -37,6 +37,6 @@
   },
   "scripts": {
     "build": "gulp",
-    "deploy": "gh-pages -d demo"
+    "deploy": "gh-pages -d Admin"
   }
 }

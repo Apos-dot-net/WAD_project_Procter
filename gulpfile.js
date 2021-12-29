@@ -8,7 +8,7 @@ sass.compiler = require('node-sass')
 
 /* Destination dir */
 
-const destDir = './demo'
+const destDir = './Admin'
 
 /* JS. Transpile with babel & minify */
 

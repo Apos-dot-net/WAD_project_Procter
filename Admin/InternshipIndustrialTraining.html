@@ -44,7 +44,7 @@
             </span>
           </a>
           <div class="navbar-dropdown">
-            <a href="profile.html" class="navbar-item">
+            <a href="Profile.html" class="navbar-item">
               <span class="icon"><i class="mdi mdi-account"></i></span>
               <span>My Profile</span>
             </a>
@@ -64,7 +64,7 @@
           </div>
         </div>
         <div class="navbar-item has-dropdown has-dropdown-with-icons has-divider has-user-avatar is-hoverable">
-          <a href="loginpage.html" class="navbar-link is-arrowless">
+          <a class="navbar-link is-arrowless">
             <div class="is-user-avatar">
               <img src="https://avatars.dicebear.com/v2/initials/john-doe.svg" alt="John Doe">
             </div>
@@ -74,7 +74,7 @@
             <span class="icon"><i class="mdi mdi-chevron-down"></i></span>
           </a>
           <div class="navbar-dropdown">
-            <a href="profile.html" class="navbar-item">
+            <a href="Profile.html" class="navbar-item">
               <span class="icon"><i class="mdi mdi-account"></i></span>
               <span>My Profile</span>
             </a>
@@ -114,7 +114,7 @@
       <p class="menu-label">General</p>
       <ul class="menu-list">
         <li>
-          <a href="index.html" class="has-icon">
+          <a href="Dashboard.html" class="has-icon">
             <span class="icon"><i class="mdi mdi-desktop-mac"></i></span>
             <span class="menu-item-label">Dashboard</span>
           </a>
@@ -135,7 +135,7 @@
           </a>
         </li>
         <li>
-          <a href="profile.html" class="has-icon">
+          <a href="Profile.html" class="has-icon">
             <span class="icon"><i class="mdi mdi-account-circle"></i></span>
             <span class="menu-item-label">Profile</span>
           </a>
@@ -147,13 +147,13 @@
           </a>
         </li>
         <li>
-          <a href="InternshipForm.html" class="has-icon">
+          <a href="InternshipIndustrialTraining.html" class="is-active has-icon">
             <span class="icon"><i class="mdi mdi-square-edit-outline"></i></span>
             <span class="menu-item-label">Internship/<br>Industrial Training</span>
           </a>
         </li>
         <li>
-          <a href="Scholarship.html" class="is-active has-icon">
+          <a href="ScholarshipRecived.html" class="has-icon">
             <span class="icon"><i class="mdi mdi-square-edit-outline"></i></span>
             <span class="menu-item-label">ScholarShip <br> Received</span>
           </a>
@@ -175,12 +175,12 @@
           </a>
           <ul>
             <li>
-              <a href="">
+              <a href="InsideTheCollege.html">
                 <span>Inside the College</span>
               </a>
             </li>
             <li>
-              <a href="">
+              <a href="OutsideTheCollege.html">
                 <span>Outside the College</span>
               </a>
             </li>
@@ -264,7 +264,7 @@
         <div class="level-item">
           <ul>
             <li>Admin</li>
-            <li>Scholarship Received</li>
+            <li>Internship or Industrial Training</li>
           </ul>
         </div>
       </div>
@@ -275,7 +275,7 @@
       <div class="level">
         <div class="level-left">
           <div class="level-item"><h1 class="title">
-            Scholarship Received
+            Details of Internship / Industrial Training
           </h1></div>
         </div>
         <div class="level-right" style="display: none;">
@@ -296,13 +296,13 @@
         <form method="get">
           <div class="field is-horizontal">
             <div class="field-label is-normal">
-              <label class="label">Name of the Scholarship</label>
+              <label class="label">Name of the Organisation or Company</label>
             </div>
             <div class="field-body">
               <div class="field">
                 <div class="control">
                   <label>
-                    <input class="input is-danger" type="text" placeholder="e.g. Foundation for Academic Excellence and Access">
+                    <input class="input is-danger" type="text" placeholder="e.g. Partnership opportunity">
                   </label>
                 </div>
                 <p class="help is-danger">
@@ -318,12 +318,12 @@
                 <div class="field is-grouped-multiline is-grouped">
                   <div class="control"><label class="b-radio radio"><input type="radio" name="sample-radio" value="one">
                     <span class="check"></span>
-                    <span class="control-label">Private</span>
+                    <span class="control-label">Industrial</span>
                   </label>
                   </div>
                   <div class="control"><label class="b-radio radio"><input type="radio" name="sample-radio" value="two">
                     <span class="check"></span>
-                    <span class="control-label">Institutional</span>
+                    <span class="control-label">Academic</span>
                   </label>
                   </div>
                 </div>
@@ -357,9 +357,96 @@
               </div>
             </div>
           </div>
+          <div class="field is-horizontal">
+            <div class="field-label is-normal">
+              <label class="label">Department</label>
+            </div>
+            <div class="field-body">
+              <div class="field is-narrow">
+                <div class="control">
+                  <div class="select is-fullwidth">
+                    <label>
+                      <select>
+                        <option hidden="hidden">Select a Department</option>
+                        <option>Business development</option>
+                        <option>Marketing</option>
+                        <option>Technical</option>
+                        <option>Research</option>
+                        <option>Volunteer</option>
+                        <option>Other</option>
+                      </select>
+                    </label>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
           <hr>
           <div class="field is-horizontal">
-            <div class="field-label"><label class="label">Grant</label></div>
+            <div class="field-label is-normal">
+              <label class="label">Position Held</label>
+            </div>
+            <div class="field-body">
+              <div class="field">
+                <div class="control">
+                  <label>
+                    <input class="input is-normal" type="text" placeholder="e.g. Team Lead">
+                  </label>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="field is-horizontal">
+            <div class="field-label is-normal">
+              <label class="label">Person of Contact</label>
+            </div>
+            <div class="field-body">
+              <div class="field">
+                <p class="control is-expanded has-icons-left">
+                  <label>
+                    <input class="input" type="text" placeholder="Name">
+                  </label>
+                  <span class="icon is-small is-left"><i class="mdi mdi-account"></i></span>
+                </p>
+              </div>
+              <div class="field">
+                <p class="control is-expanded has-icons-left has-icons-right">
+                  <label>
+                    <input class="input is-success" type="email" placeholder="Email" value="alex@smith.com">
+                  </label>
+                  <span class="icon is-small is-left"><i class="mdi mdi-mail"></i></span>
+                  <span class="icon is-small is-right"><i class="mdi mdi-check"></i></span>
+                </p>
+              </div>
+            </div>
+          </div>
+          <hr>
+          <div class="field has-check is-horizontal">
+            <div class="field-label"><label class="label">Atonement</label></div>
+            <div class="field-body">
+              <div class="field">
+                <div class="field is-grouped-multiline is-grouped">
+                  <div class="control"><label class="b-radio radio"><input type="radio" name="sample-radio" value="one">
+                    <span class="check"></span>
+                    <span class="control-label">Paid</span>
+                  </label>
+                  </div>
+                  <div class="control"><label class="b-radio radio"><input type="radio" name="sample-radio" value="two">
+                    <span class="check"></span>
+                    <span class="control-label">Unpaid</span>
+                  </label>
+                  </div>
+                  <div class="control"><label class="b-radio radio"><input type="radio" name="sample-radio" value="two">
+                    <span class="check"></span>
+                    <span class="control-label">Compensated</span>
+                  </label>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="field is-horizontal">
+            <div class="field-label"></div>
             <div class="field-body">
               <div class="field is-expanded">
                 <div class="field has-addons">
@@ -466,10 +553,10 @@
   </div>
 </div>
 
-<!-- Scripts below are for demo only -->
+<!-- Scripts below are for Admin only -->
 <script type="text/javascript" src="js/main.min.js"></script>
 
-<!-- Icons below are for demo only. Feel free to use any icon pack. Docs: https://bulma.io/documentation/elements/icon/ -->
+<!-- Icons below are for Admin only. Feel free to use any icon pack. Docs: https://bulma.io/documentation/elements/icon/ -->
 <link rel="stylesheet" href="https://cdn.materialdesignicons.com/4.9.95/css/materialdesignicons.min.css">
 </body>
 </html>

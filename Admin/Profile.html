@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Forms - Admin One HTML - Bulma Admin Dashboard</title>
+  <title>Profile - Admin One HTML - Bulma Admin Dashboard</title>
 
   <!-- Bulma is included -->
   <link rel="stylesheet" href="css/main.min.css">
@@ -44,7 +44,7 @@
             </span>
           </a>
           <div class="navbar-dropdown">
-            <a href="profile.html" class="navbar-item">
+            <a href="Profile.html" class="navbar-item is-active">
               <span class="icon"><i class="mdi mdi-account"></i></span>
               <span>My Profile</span>
             </a>
@@ -57,7 +57,7 @@
               <span>Messages</span>
             </a>
             <hr class="navbar-divider">
-            <a class="navbar-item">
+            <a href="loginpage.html" class="navbar-item">
               <span class="icon"><i class="mdi mdi-logout"></i></span>
               <span>Log Out</span>
             </a>
@@ -74,7 +74,7 @@
             <span class="icon"><i class="mdi mdi-chevron-down"></i></span>
           </a>
           <div class="navbar-dropdown">
-            <a href="profile.html" class="navbar-item">
+            <a href="Profile.html" class="navbar-item is-active">
               <span class="icon"><i class="mdi mdi-account"></i></span>
               <span>My Profile</span>
             </a>
@@ -87,7 +87,7 @@
               <span>Messages</span>
             </a>
             <hr class="navbar-divider">
-            <a class="navbar-item">
+            <a href="loginpage.html" class="navbar-item">
               <span class="icon"><i class="mdi mdi-logout"></i></span>
               <span>Log Out</span>
             </a>
@@ -97,7 +97,7 @@
           <span class="icon"><i class="mdi mdi-help-circle-outline"></i></span>
           <span>About</span>
         </a>
-        <a title="Log out" class="navbar-item is-desktop-icon-only">
+        <a href="loginpage.html" title="Log out" class="navbar-item is-desktop-icon-only">
           <span class="icon"><i class="mdi mdi-logout"></i></span>
           <span>Log out</span>
         </a>
@@ -114,7 +114,7 @@
       <p class="menu-label">General</p>
       <ul class="menu-list">
         <li>
-          <a href="index.html" class="has-icon">
+          <a href="Dashboard.html" class="has-icon">
             <span class="icon"><i class="mdi mdi-desktop-mac"></i></span>
             <span class="menu-item-label">Dashboard</span>
           </a>
@@ -135,7 +135,7 @@
           </a>
         </li>
         <li>
-          <a href="profile.html" class="has-icon">
+          <a href="Profile.html" class="is-active has-icon">
             <span class="icon"><i class="mdi mdi-account-circle"></i></span>
             <span class="menu-item-label">Profile</span>
           </a>
@@ -147,24 +147,23 @@
           </a>
         </li>
         <li>
-          <a href="InternshipForm.html" class="has-icon">
+          <a href="InternshipIndustrialTraining.html" class="has-icon">
             <span class="icon"><i class="mdi mdi-square-edit-outline"></i></span>
             <span class="menu-item-label">Internship/<br>Industrial Training</span>
           </a>
         </li>
         <li>
-          <a href="Scholarship.html" class="has-icon">
+          <a href="ScholarshipRecived.html" class="has-icon">
             <span class="icon"><i class="mdi mdi-square-edit-outline"></i></span>
             <span class="menu-item-label">ScholarShip <br> Received</span>
           </a>
         </li>
         <li>
-          <a href="SoftSkill_Placement.html" class="is-active has-icon">
+          <a href="SoftSkill_Placement.html" class="has-icon">
             <span class="icon"><i class="mdi mdi-square-edit-outline"></i></span>
             <span class="menu-item-label">Soft-Skill training <br> and Placement</span>
           </a>
         </li>
-
         <li>
           <a class="has-icon has-dropdown-icon">
             <span class="icon"><i class="mdi mdi-view-list"></i></span>
@@ -175,12 +174,12 @@
           </a>
           <ul>
             <li>
-              <a href="">
+              <a href="InsideTheCollege.html">
                 <span>Inside the College</span>
               </a>
             </li>
             <li>
-              <a href="">
+              <a href="OutsideTheCollege.html">
                 <span>Outside the College</span>
               </a>
             </li>
@@ -244,7 +243,7 @@
       <p class="menu-label">About</p>
       <ul class="menu-list">
         <li>
-          <a href="https://admin-one-html.justboil.me/" target="_blank" class="has-icon">
+          <a href="" target="_blank" class="has-icon">
             <span class="icon"><i class="mdi mdi-credit-card-outline"></i></span>
             <span class="menu-item-label">Premium Demo</span>
           </a>
@@ -264,18 +263,8 @@
         <div class="level-item">
           <ul>
             <li>Admin</li>
-            <li>Forms</li>
+            <li>Profile</li>
           </ul>
-        </div>
-      </div>
-      <div class="level-right">
-        <div class="level-item">
-          <div class="buttons is-right">
-            <a href="https://admin-one-html.justboil.me/" target="_blank" class="button is-primary">
-              <span class="icon"><i class="mdi mdi-credit-card-outline"></i></span>
-              <span>Premium Demo</span>
-            </a>
-          </div>
         </div>
       </div>
     </div>
@@ -285,7 +274,7 @@
       <div class="level">
         <div class="level-left">
           <div class="level-item"><h1 class="title">
-            Forms
+            Profile
           </h1></div>
         </div>
         <div class="level-right" style="display: none;">
@@ -295,220 +284,183 @@
     </div>
   </section>
   <section class="section is-main-section">
-    <div class="card">
-      <header class="card-header">
-        <p class="card-header-title">
-          <span class="icon"><i class="mdi mdi-ballot"></i></span>
-          Forms
-        </p>
-      </header>
-      <div class="card-content">
-        <form method="get">
-          <div class="field is-horizontal">
-            <div class="field-label is-normal">
-              <label class="label">From</label>
-            </div>
-            <div class="field-body">
-              <div class="field">
-                <p class="control is-expanded has-icons-left">
-                  <label>
-                    <input class="input" type="text" placeholder="Name">
-                  </label>
-                  <span class="icon is-small is-left"><i class="mdi mdi-account"></i></span>
-                </p>
-              </div>
-              <div class="field">
-                <p class="control is-expanded has-icons-left has-icons-right">
-                  <label>
-                    <input class="input is-success" type="email" placeholder="Email" value="alex@smith.com">
-                  </label>
-                  <span class="icon is-small is-left"><i class="mdi mdi-mail"></i></span>
-                  <span class="icon is-small is-right"><i class="mdi mdi-check"></i></span>
-                </p>
-              </div>
-            </div>
-          </div>
-          <div class="field is-horizontal">
-            <div class="field-label"></div>
-            <div class="field-body">
-              <div class="field is-expanded">
-                <div class="field has-addons">
-                  <p class="control">
-                    <a class="button is-static">
-                      +44
-                    </a>
-                  </p>
-                  <p class="control is-expanded">
-                    <label>
-                      <input class="input" type="tel" placeholder="Your phone number">
-                    </label>
-                  </p>
-                </div>
-                <p class="help">Do not enter the first zero</p>
-              </div>
-            </div>
-          </div>
-          <div class="field is-horizontal">
-            <div class="field-label is-normal">
-              <label class="label">Department</label>
-            </div>
-            <div class="field-body">
-              <div class="field is-narrow">
-                <div class="control">
-                  <div class="select is-fullwidth">
-                    <label>
-                      <select>
-                        <option>Business development</option>
-                        <option>Marketing</option>
-                        <option>Sales</option>
-                      </select>
-                    </label>
+    <div class="tile is-ancestor">
+      <div class="tile is-parent">
+        <div class="card tile is-child">
+          <header class="card-header">
+            <p class="card-header-title">
+              <span class="icon"><i class="mdi mdi-account-circle default"></i></span>
+              Edit Profile
+            </p>
+          </header>
+          <div class="card-content">
+            <form>
+              <div class="field is-horizontal">
+                <div class="field-label is-normal"><label class="label">Avatar</label></div>
+                <div class="field-body">
+                  <div class="field">
+                    <div class="field file">
+                      <label class="upload control">
+                        <a class="button is-primary">
+                          <span class="icon"><i class="mdi mdi-upload default"></i></span>
+                          <span>Pick a file</span>
+                        </a>
+                        <input type="file">
+                      </label>
+                    </div>
                   </div>
                 </div>
               </div>
-            </div>
-          </div>
-          <hr>
-          <div class="field is-horizontal">
-            <div class="field-label is-normal">
-              <label class="label">Subject</label>
-            </div>
-            <div class="field-body">
-              <div class="field">
-                <div class="control">
-                  <label>
-                    <input class="input is-danger" type="text" placeholder="e.g. Partnership opportunity">
-                  </label>
+              <hr>
+              <div class="field is-horizontal">
+                <div class="field-label is-normal">
+                  <label class="label">Name</label>
                 </div>
-                <p class="help is-danger">
-                  This field is required
-                </p>
-              </div>
-            </div>
-          </div>
-
-          <div class="field is-horizontal">
-            <div class="field-label is-normal">
-              <label class="label">Question</label>
-            </div>
-            <div class="field-body">
-              <div class="field">
-                <div class="control">
-                  <label>
-                    <textarea class="textarea" placeholder="Explain how we can help you"></textarea>
-                  </label>
-                </div>
-              </div>
-            </div>
-          </div>
-          <hr>
-          <div class="field is-horizontal">
-            <div class="field-label">
-              <!-- Left empty for spacing -->
-            </div>
-            <div class="field-body">
-              <div class="field">
-                <div class="field is-grouped">
-                  <div class="control">
-                    <button type="submit" class="button is-primary">
-                      <span>Submit</span>
-                    </button>
-                  </div>
-                  <div class="control">
-                    <button type="button" class="button is-primary is-outlined">
-                      <span>Reset</span>
-                    </button>
+                <div class="field-body">
+                  <div class="field">
+                    <div class="control">
+                      <label>
+                        <input type="text" autocomplete="on" name="name" value="John Doe" class="input" required>
+                      </label>
+                    </div>
+                    <p class="help">Required. Your name</p>
                   </div>
                 </div>
               </div>
+              <div class="field is-horizontal">
+                <div class="field-label is-normal">
+                  <label class="label">E-mail</label>
+                </div>
+                <div class="field-body">
+                  <div class="field">
+                    <div class="control">
+                      <label>
+                        <input type="email" autocomplete="on" name="email" value="user@example.com" class="input" required>
+                      </label>
+                    </div>
+                    <p class="help">Required. Your e-mail</p>
+                  </div>
+                </div>
+              </div>
+              <hr>
+              <div class="field is-horizontal">
+                <div class="field-label is-normal"></div>
+                <div class="field-body">
+                  <div class="field">
+                    <div class="control">
+                      <button type="submit" class="button is-primary">
+                        Submit
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+      <div class="tile is-parent">
+        <div class="card tile is-child">
+          <header class="card-header">
+            <p class="card-header-title">
+              <span class="icon"><i class="mdi mdi-account default"></i></span>
+              Profile
+            </p>
+          </header>
+          <div class="card-content">
+            <div class="is-user-avatar image has-max-width is-aligned-center">
+              <img src="https://avatars.dicebear.com/v2/initials/john-doe.svg" alt="John Doe">
+            </div>
+            <hr>
+            <div class="field">
+              <label class="label">Name</label>
+              <div class="control is-clearfix">
+                <label>
+                  <input type="text" readonly value="John Doe" class="input is-static">
+                </label>
+              </div>
+            </div>
+            <hr>
+            <div class="field">
+              <label class="label">E-mail</label>
+              <div class="control is-clearfix">
+                <label>
+                  <input type="text" readonly value="user@example.com" class="input is-static">
+                </label>
+              </div>
             </div>
           </div>
-        </form>
+        </div>
       </div>
     </div>
     <div class="card">
       <header class="card-header">
         <p class="card-header-title">
-          <span class="icon"><i class="mdi mdi-ballot-outline default"></i></span>
-          Custom elements
+          <span class="icon"><i class="mdi mdi-lock default"></i></span>
+          Change Password
         </p>
       </header>
       <div class="card-content">
-        <div class="field has-check is-horizontal">
-          <div class="field-label"><label class="label">Checkbox</label></div>
-          <div class="field-body">
-            <div class="field">
-              <div class="field is-grouped-multiline is-grouped">
+        <form>
+          <div class="field is-horizontal">
+            <div class="field-label is-normal">
+              <label class="label">Current password</label>
+            </div>
+            <div class="field-body">
+              <div class="field">
                 <div class="control">
-                  <label class="b-checkbox checkbox"><input type="checkbox" value="lorem">
-                    <span class="check is-primary"></span>
-                    <span class="control-label">Lorem</span>
+                  <label>
+                    <input type="password" name="password_current" autocomplete="current-password" class="input" required>
                   </label>
                 </div>
+                <p class="help">Required. Your current password</p></div>
+            </div>
+          </div>
+          <hr>
+          <div class="field is-horizontal">
+            <div class="field-label is-normal">
+              <label class="label">New password</label>
+            </div>
+            <div class="field-body">
+              <div class="field">
                 <div class="control">
-                  <label class="b-checkbox checkbox"><input type="checkbox" value="ipsum">
-                    <span class="check is-primary"></span>
-                    <span class="control-label">Ipsum</span>
+                  <label>
+                    <input type="password" autocomplete="new-password" name="password" class="input" required>
                   </label>
                 </div>
+                <p class="help">Required. New password</p>
+              </div>
+            </div>
+          </div>
+          <div class="field is-horizontal">
+            <div class="field-label is-normal">
+              <label class="label">Confirm password</label>
+            </div>
+            <div class="field-body">
+              <div class="field">
                 <div class="control">
-                  <label class="b-checkbox checkbox"><input type="checkbox" value="dolore">
-                    <span class="check is-primary"></span>
-                    <span class="control-label">Dolore</span>
+                  <label>
+                    <input type="password" autocomplete="new-password" name="password_confirmation" class="input" required>
                   </label>
+                </div>
+                <p class="help">Required. New password one more time</p>
+              </div>
+            </div>
+          </div>
+          <hr>
+          <div class="field is-horizontal">
+            <div class="field-label is-normal"></div>
+            <div class="field-body">
+              <div class="field">
+                <div class="control">
+                  <button type="submit" class="button is-primary">
+                    Submit
+                  </button>
                 </div>
               </div>
             </div>
           </div>
-        </div>
-        <hr>
-        <div class="field has-check is-horizontal">
-          <div class="field-label"><label class="label">Radio</label></div>
-          <div class="field-body">
-            <div class="field">
-              <div class="field is-grouped-multiline is-grouped">
-                <div class="control"><label class="b-radio radio"><input type="radio" name="sample-radio" value="one">
-                  <span class="check"></span>
-                  <span class="control-label">One</span>
-                </label></div>
-                <div class="control"><label class="b-radio radio"><input type="radio" name="sample-radio" value="two">
-                  <span class="check"></span>
-                  <span class="control-label">Two</span>
-                </label>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <hr>
-        <div class="field is-horizontal">
-          <div class="field-label"><label class="label">Switch</label></div>
-          <div class="field-body">
-            <div class="field">
-              <label class="switch is-rounded"><input type="checkbox" value="false">
-                <span class="check"></span>
-                <span class="control-label">Default</span>
-              </label>
-            </div>
-          </div>
-        </div>
-        <hr>
-        <div class="field is-horizontal">
-          <div class="field-label is-normal"><label class="label">File</label></div>
-          <div class="field-body">
-            <div class="field">
-              <div class="field file">
-                <label class="upload control">
-                  <a class="button is-primary">
-                    <span class="icon"><i class="mdi mdi-upload"></i></span>
-                    <span>Pick a file</span>
-                  </a>
-                  <input type="file">
-                </label>
-              </div>
-            </div>
-          </div>
-        </div>
+        </form>
       </div>
     </div>
   </section>
@@ -557,10 +509,10 @@
   </div>
 </div>
 
-<!-- Scripts below are for demo only -->
+<!-- Scripts below are for Admin only -->
 <script type="text/javascript" src="js/main.min.js"></script>
 
-<!-- Icons below are for demo only. Feel free to use any icon pack. Docs: https://bulma.io/documentation/elements/icon/ -->
+<!-- Icons below are for Admin only. Feel free to use any icon pack. Docs: https://bulma.io/documentation/elements/icon/ -->
 <link rel="stylesheet" href="https://cdn.materialdesignicons.com/4.9.95/css/materialdesignicons.min.css">
 </body>
 </html>
