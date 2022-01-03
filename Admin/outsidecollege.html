@@ -4,9 +4,7 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Forms - Admin One HTML - Bulma Admin Dashboard</title>
-
-  <link rel = "icon" href ="img/BMSLogo.png" type = "image/x-icon">
+  <title>Internship or Industrial Training</title>
 
   <!-- Bulma is included -->
   <link rel="stylesheet" href="css/main.min.css">
@@ -46,7 +44,7 @@
             </span>
           </a>
           <div class="navbar-dropdown">
-            <a href="Profile.html" class="navbar-item">
+            <a href="profile.html" class="navbar-item">
               <span class="icon"><i class="mdi mdi-account"></i></span>
               <span>My Profile</span>
             </a>
@@ -59,14 +57,14 @@
               <span>Messages</span>
             </a>
             <hr class="navbar-divider">
-            <a class="navbar-item" href="loginpage.html">
+            <a href="loginpage.html" class="navbar-item">
               <span class="icon"><i class="mdi mdi-logout"></i></span>
               <span>Log Out</span>
             </a>
           </div>
         </div>
         <div class="navbar-item has-dropdown has-dropdown-with-icons has-divider has-user-avatar is-hoverable">
-          <a class="navbar-link is-arrowless">
+          <a href="loginpage.html" class="navbar-link is-arrowless">
             <div class="is-user-avatar">
               <img src="https://avatars.dicebear.com/v2/initials/john-doe.svg" alt="John Doe">
             </div>
@@ -76,7 +74,7 @@
             <span class="icon"><i class="mdi mdi-chevron-down"></i></span>
           </a>
           <div class="navbar-dropdown">
-            <a href="Profile.html" class="navbar-item">
+            <a href="profile.html" class="navbar-item">
               <span class="icon"><i class="mdi mdi-account"></i></span>
               <span>My Profile</span>
             </a>
@@ -89,7 +87,7 @@
               <span>Messages</span>
             </a>
             <hr class="navbar-divider">
-            <a class="navbar-item" href="loginpage.html">
+            <a href="loginpage.html" class="navbar-item">
               <span class="icon"><i class="mdi mdi-logout"></i></span>
               <span>Log Out</span>
             </a>
@@ -116,7 +114,7 @@
       <p class="menu-label">General</p>
       <ul class="menu-list">
         <li>
-          <a href="Dashboard.html" class="has-icon">
+          <a href="index.html" class="has-icon">
             <span class="icon"><i class="mdi mdi-desktop-mac"></i></span>
             <span class="menu-item-label">Dashboard</span>
           </a>
@@ -137,7 +135,7 @@
           </a>
         </li>
         <li>
-          <a href="Profile.html" class="has-icon">
+          <a href="profile.html" class="has-icon">
             <span class="icon"><i class="mdi mdi-account-circle"></i></span>
             <span class="menu-item-label">Profile</span>
           </a>
@@ -149,13 +147,13 @@
           </a>
         </li>
         <li>
-          <a href="InternshipIndustrialTraining.html" class="has-icon">
+          <a href="InternshipForm.html" class="has-icon">
             <span class="icon"><i class="mdi mdi-square-edit-outline"></i></span>
             <span class="menu-item-label">Internship/<br>Industrial Training</span>
           </a>
         </li>
         <li>
-          <a href="ScholarshipRecived.html" class="has-icon">
+          <a href="Scholarship.html" >
             <span class="icon"><i class="mdi mdi-square-edit-outline"></i></span>
             <span class="menu-item-label">ScholarShip <br> Received</span>
           </a>
@@ -168,10 +166,25 @@
         </li>
 
         <li>
-          <a href="Participation.html" class="has-icon is-active">
-            <span class="icon"><i class="mdi mdi-square-edit-outline"></i></span>
+          <a class="has-icon has-dropdown-icon">
+            <span class="icon"><i class="mdi mdi-view-list"></i></span>
             <span class="menu-item-label">Participation</span>
+            <div class="dropdown-icon">
+              <span class="icon"><i class="mdi mdi-plus"></i></span>
+            </div>
           </a>
+          <ul>
+            <li>
+              <a href="../demo/insidecollege.html">
+                <span>Inside the College</span>
+              </a>
+            </li>
+            <li>
+              <a href="./outsidecollege.html" class="is-active has-icon">
+                <span>Outside the College</span>
+              </a>
+            </li>
+          </ul>
         </li>
         <li>
           <a class="has-icon has-dropdown-icon">
@@ -251,7 +264,7 @@
         <div class="level-item">
           <ul>
             <li>Admin</li>
-            <li>Participation</li>
+            <li>Outside College</li>
           </ul>
         </div>
       </div>
@@ -262,7 +275,7 @@
       <div class="level">
         <div class="level-left">
           <div class="level-item"><h1 class="title">
-            Forms
+            Participation in activities Outside college
           </h1></div>
         </div>
         <div class="level-right" style="display: none;">
@@ -276,36 +289,186 @@
       <header class="card-header">
         <p class="card-header-title">
           <span class="icon"><i class="mdi mdi-ballot"></i></span>
-          Forms
+          Form
         </p>
       </header>
       <div class="card-content">
         <form method="get">
           <div class="field is-horizontal">
-            <div class="field-label"><label class="label">Location of the competition</label></div>
+            <div class="field-label is-normal">
+              <label class="label">Type of Activity</label>
+            </div>
             <div class="field-body">
               <div class="field">
-                <div class="field is-grouped-multiline is-grouped">
-                  <div class="control"><label class="b-radio radio"><input type="radio" name="sample-radio" value="one" onclick="EnableDisableTB()" >
-                    <span class="check"></span>
-                    <span class="control-label">Inside the college</span>
-                  </label></div>
-                  <div class="control"><label class="b-radio radio"><input type="radio" id="others" name="sample-radio" value="two" onclick="EnableDisableTB()" >
-                    <span class="check"></span>
-                    <span class="control-label">Outside the college</span>
+                <div class="control">
+                  <label>
+                    <input class="input is-danger" type="text" placeholder="(co-curricular/Extra curricular/other)">
                   </label>
+                </div>
+                <p class="help is-danger">
+                  This field is required
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="field is-horizontal">
+            <div class="field-label is-normal">
+              <label class="label">Nature of Association</label>
+            </div>
+            <div class="field-body">
+              <div class="field">
+                <div class="control">
+                  <label>
+                    <input class="input is-danger" type="text" placeholder="(Volunteer/Participation/Other)">
+                  </label>
+                </div>
+                <p class="help is-danger">
+                  This field is required
+                </p>
+              </div>
+            </div>
+          </div>
+
+
+
+
+
+          <div class="card-content">
+            <div class="field is-horizontal">
+              <div class="field-label is-normal">
+                <label class="label">Name of the club</label>
+              </div>
+              <div class="field-body">
+                <div class="field">
+                  <div class="control">
+                    <label>
+                      <input class="input " type="text" placeholder="state the name of the club if any, e.g. IEEE">
+                    </label>
                   </div>
                 </div>
+              </div>
+            </div>
 
-                <div class="field is-horizontal">
-                  <div class="field-body">
-                    <div class="field">
-                      <p class="control is-expanded has-icons-left">
-                        <label>
-                          <input id="otherlan" disabled="disabled" class="input" type="text" placeholder="Name of the Institute">
-                        </label>
-                        <span class="icon is-small is-left"><i class="mdi mdi-city"></i></span>
-                      </p>
+            <div class="field is-horizontal">
+              <div class="field-label is-normal">
+                <label class="label">Awards(if any)</label>
+              </div>
+              <div class="field-body">
+                <div class="field">
+                  <div class="control">
+                    <label>
+                      <input class="input " type="text" >
+                    </label>
+                  </div>
+
+                </div>
+              </div>
+            </div>
+
+            <div class="field has-check is-horizontal">
+              <div class="field-label"><label class="label"></label></div>
+              <div class="field-body">
+                <div class="field">
+                  <!--
+                  <div class="field is-grouped-multiline is-grouped">
+                    <div class="control"><label class="b-radio radio"><input type="radio" name="sample-radio" value="one">
+                      <span class="check"></span>
+                      <span class="control-label">Private</span>
+                    </label>
+                    </div>
+                    <div class="control"><label class="b-radio radio"><input type="radio" name="sample-radio" value="two">
+                      <span class="check"></span>
+                      <span class="control-label">Institutional</span>
+                    </label>
+                    </div>
+
+                  </div>
+                  -->
+                </div>
+              </div>
+            </div>
+            <div class="field is-horizontal">
+              <div class="field-label is-normal">
+                <label class="label">Date</label>
+              </div>
+              <div class="field-body">
+
+                <p class="control is-expanded has-icons-left">
+                  <label>
+                    <input class="input" type="date">
+                  </label>
+                  <span class="icon is-small is-left"><i class="mdi mdi-account"></i></span>
+                </p>
+              </div>
+              <!--<div class="field-label is-normal">
+                <label class="label">To</label>
+              </div>
+              <div class="field">
+                <p class="control is-expanded has-icons-left has-icons-right">
+                  <label>
+                    <input class="input is-success" type="date">
+                  </label>
+                  <span class="icon is-small is-left"><i class="mdi mdi-mail"></i></span>
+                  <span class="icon is-small is-right"><i class="mdi mdi-check"></i></span>
+                </p>-->
+            </div>
+
+            <hr>
+            <!--
+            <div class="field is-horizontal">
+              <div class="field-label"><label class="label">Grant</label></div>
+              <div class="field-body">
+                <div class="field is-expanded">
+                  <div class="field has-addons">
+                    <p class="control">
+                      <a class="button is-static">
+                        ₹
+                      </a>
+                    </p>
+                    <p class="control is-expanded">
+                      <label>
+                        <input class="input" type="number" placeholder="Amount">
+                      </label>
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            -->
+            <hr>
+            <div class="field is-horizontal">
+              <div class="field-label is-normal"><label class="label">Upload your certificate of participation</label></div>
+              <div class="field-body">
+                <div class="field">
+                  <div class="field file">
+                    <label class="upload control">
+                      <a class="button is-primary">
+                        <span class="icon"><i class="mdi mdi-upload"></i></span>
+                        <span>Pick a file</span>
+                      </a>
+                      <input type="file">
+                    </label>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <hr>
+            <div class="field is-horizontal">
+              <div class="field-label">
+                <!-- Left empty for spacing -->
+              </div>
+              <div class="field-body">
+                <div class="field">
+                  <div class="field is-grouped">
+                    <div class="control">
+                      <button type="submit" class="button is-primary">
+                        <span>Submit</span>
+                      </button>
+                    </div>
+                    <div class="control">
+                      <button type="button" class="button is-primary is-outlined">
+                        <span>Reset</span>
+                      </button>
                     </div>
                   </div>
                 </div>
@@ -313,158 +476,8 @@
             </div>
           </div>
           <hr>
-          <div class="field is-horizontal">
-            <div class="field-label is-normal">
-              <label class="label">Name of the Competition</label>
-            </div>
-            <div class="field-body">
-              <div class="field">
-                <p class="control is-expanded has-icons-left">
-                  <label>
-                    <input class="input" type="text">
-                  </label>
-                  <span class="icon is-small is-left"><i class="mdi mdi-certificate"></i></span>
-                </p>
-              </div>
-              <div class="field">
-                <p class="control is-expanded has-icons-left has-icons-right">
-                  <label>
-                    <input class="input" placeholder="link of the website">
-                  </label>
-                  <span class="icon is-small is-left"><i class="mdi mdi-mail"></i></span>
-                </p>
-              </div>
-            </div>
-          </div>
-          <div class="field has-check is-horizontal">
-            <div class="field-label"><label class="label">Type of Activity</label></div>
-            <div class="field-body">
-              <div class="field">
-                <div class="field is-grouped-multiline is-grouped">
-                  <div class="control"><label class="b-radio radio"><input type="radio" name="sample-radio" value="one" onclick="EnableDisableTB1()">
-                    <span class="check"></span>
-                    <span class="control-label">Co-curricular</span>
-                  </label></div>
-                  <div class="control"><label class="b-radio radio"><input type="radio" name="sample-radio" value="two" onclick="EnableDisableTB1()">
-                    <span class="check"></span>
-                    <span class="control-label">Extra Curricular</span>
-                  </label>
-                  </div>
-                  <div class="control"><label class="b-radio radio"><input type="radio" name="sample-radio" value="two"  id="others1" onclick="EnableDisableTB1()">
-                    <span class="check"></span>
-                    <span class="control-label">Other</span>
-                  </label>
-                  </div>
-                  <div class="field">
-                    <p class="control is-expanded has-icons-left has-icons-right">
-                      <label>
-                        <input id="otherlan1" disabled="disabled"  class="input is-small" placeholder="Other">
-                      </label>
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="field has-check is-horizontal">
-            <div class="field-label"><label class="label">Name of Association</label></div>
-            <div class="field-body">
-              <div class="field">
-                <div class="field is-grouped-multiline is-grouped">
-                  <div class="control"><label class="b-radio radio"><input type="radio" name="sample-radio" value="one" onclick= "EnableDisableTB2()">
-                    <span class="check"></span>
-                    <span class="control-label">Participant</span>
-                  </label></div>
-                  <div class="control"><label class="b-radio radio"><input type="radio" name="sample-radio" value="two" onclick="EnableDisableTB2()" >
-                    <span class="check"></span>
-                    <span class="control-label">Volunteer</span>
-                  </label>
-                  </div>
-                  <div class="control"><label class="b-radio radio"><input type="radio" name="sample-radio" value="two" onclick="EnableDisableTB2()" id="others2">
-                    <span class="check"></span>
-                    <span class="control-label">Other</span>
-                  </label>
-                  </div>
-                  <div class="field">
-                    <p class="control is-expanded has-icons-left has-icons-right">
-                      <label>
-                        <input id="otherlan2" disabled="disabled" class="input is-small" placeholder="Other">
-                      </label>
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="field is-horizontal">
-            <div class="field-label"><label class="label">Awards(if any)</label></div>
-            <div class="field-body">
-              <div class="field">
-                <p class="control is-expanded has-icons-left">
-                  <label>
-                    <input class="input" type="text" placeholder="Award">
-                  </label>
-                  <span class="icon is-small is-left"><i class="mdi mdi-city"></i></span>
-                </p>
-              </div>
-            </div>
-          </div>
-          <div class="field is-horizontal">
-            <div class="field-label"><label class="label">Date</label></div>
-            <div class="field-body">
-              <div class="field">
-                <p class="control is-expanded has-icons-left">
-                  <label>
-                    <input class="input" type="date">
-                  </label>
-                </p>
-              </div>
-              <div class="field"></div>
-              <div class="field"></div>
-              <div class="field"></div>
-              <div class="field"></div>
-            </div>
-          </div>
-          <hr>
-          <div class="field is-horizontal">
-            <div class="field-label is-normal"><label class="label">Certificate</label></div>
-            <div class="field-body">
-              <div class="field">
-                <div class="field file">
-                  <label class="upload control">
-                    <a class="button is-primary">
-                      <span class="icon"><i class="mdi mdi-upload"></i></span>
-                      <span>Pick a file</span>
-                    </a>
-                    <input type="file">
-                  </label>
-                </div>
-              </div>
-            </div>
-          </div>
-          <hr>
-          <div class="field is-horizontal">
-            <div class="field-label">
-              <!-- Left empty for spacing -->
-            </div>
-            <div class="field-body">
-              <div class="field">
-                <div class="field is-grouped">
-                  <div class="control">
-                    <button type="submit" class="button is-primary">
-                      <span>Submit</span>
-                    </button>
-                  </div>
-                  <div class="control">
-                    <button type="button" class="button is-primary is-outlined">
-                      <span>Reset</span>
-                    </button>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
         </form>
+
       </div>
     </div>
   </section>
@@ -513,39 +526,10 @@
   </div>
 </div>
 
-<!-- Scripts below are for Admin only -->
+<!-- Scripts below are for demo only -->
 <script type="text/javascript" src="js/main.min.js"></script>
 
-<!-- Icons below are for Admin only. Feel free to use any icon pack. Docs: https://bulma.io/documentation/elements/icon/ -->
+<!-- Icons below are for demo only. Feel free to use any icon pack. Docs: https://bulma.io/documentation/elements/icon/ -->
 <link rel="stylesheet" href="https://cdn.materialdesignicons.com/4.9.95/css/materialdesignicons.min.css">
-<script type="text/javascript">
-  function EnableDisableTB() {
-    var others = document.getElementById("others");
-    var otherlan = document.getElementById("otherlan");
-    otherlan.disabled = others.checked ? false : true;
-    otherlan.value="";
-    if (!otherlan.disabled) {
-      otherlan.focus();
-    }
-  }
-  function EnableDisableTB1() {
-    var others1 = document.getElementById("others1");
-    var otherlan1 = document.getElementById("otherlan1");
-    otherlan1.disabled = others1.checked ? false : true;
-    otherlan1.value="";
-    if (!otherlan1.disabled) {
-      otherlan1.focus();
-    }
-  }
-  function EnableDisableTB2() {
-    var others2 = document.getElementById("others2");
-    var otherlan2 = document.getElementById("otherlan2");
-    otherlan2.disabled = others2.checked ? false : true;
-    otherlan2.value = "";
-    if (!otherlan2.disabled) {
-      otherlan2.focus();
-    }
-  }
-</script>
 </body>
 </html>
