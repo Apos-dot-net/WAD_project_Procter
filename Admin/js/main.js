@@ -1,5 +1,4 @@
-"use strict";
-
+"use strict"
 /* Aside: submenus toggle */
 Array.from(document.getElementsByClassName('menu is-menu-main')).forEach(function (el) {
   Array.from(el.getElementsByClassName('has-dropdown-icon')).forEach(function (elA) {
@@ -54,4 +53,14 @@ Array.from(document.getElementsByClassName('jb-notification-dismiss')).forEach(f
   el.addEventListener('click', function (e) {
     e.currentTarget.closest('.notification').classList.add('is-hidden');
   });
+});
+
+Array.from(document.getElementsByClassName('field')).forEach(function (el) {
+  const OthersRadio = el.getElementsByClassName('othersRadio');
+  const OthersInput = el.getElementsByClassName('othersInput');
+  OthersInput.disabled = !OthersRadio.checked;
+  OthersInput.value = "";
+  if (!OthersInput.disabled) {
+    OthersInput.focus();
+  }
 });

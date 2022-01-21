@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Internship or Industrial Training</title>
+  <title>Forms - Admin One HTML - Bulma Admin Dashboard</title>
 
   <link rel = "icon" href ="img/BMSLogo.png" type = "image/x-icon">
 
@@ -59,7 +59,7 @@
               <span>Messages</span>
             </a>
             <hr class="navbar-divider">
-            <a href="loginpage.html" class="navbar-item">
+            <a class="navbar-item" href="loginpage.html">
               <span class="icon"><i class="mdi mdi-logout"></i></span>
               <span>Log Out</span>
             </a>
@@ -89,7 +89,7 @@
               <span>Messages</span>
             </a>
             <hr class="navbar-divider">
-            <a href="loginpage.html" class="navbar-item">
+            <a class="navbar-item" href="loginpage.html">
               <span class="icon"><i class="mdi mdi-logout"></i></span>
               <span>Log Out</span>
             </a>
@@ -149,7 +149,7 @@
           </a>
         </li>
         <li>
-          <a href="InternshipIndustrialTraining.html" class="has-icon is-active">
+          <a href="InternshipIndustrialTraining.html" class="has-icon">
             <span class="icon"><i class="mdi mdi-briefcase"></i></span>
             <span class="menu-item-label">Internship or<br>Industrial Training</span>
           </a>
@@ -167,9 +167,9 @@
           </a>
         </li>
         <li>
-          <a href="Participation.html" class="has-icon">
+          <a href="Participation.html" class="has-icon is-active">
             <span class="icon"><i class="mdi mdi-rowing"></i></span>
-            <span class="menu-item-label">Participation</span>
+            <span class="menu-item-label">Proctor Meeting</span>
           </a>
         </li>
         <li>
@@ -250,7 +250,7 @@
         <div class="level-item">
           <ul>
             <li>Admin</li>
-            <li>Internship or Industrial Training</li>
+            <li>Proctor Meeting</li>
           </ul>
         </div>
       </div>
@@ -261,7 +261,7 @@
       <div class="level">
         <div class="level-left">
           <div class="level-item"><h1 class="title">
-            Details of Internship / Industrial Training
+            Proctor meeting
           </h1></div>
         </div>
         <div class="level-right" style="display: none;">
@@ -275,50 +275,33 @@
       <header class="card-header">
         <p class="card-header-title">
           <span class="icon"><i class="mdi mdi-ballot"></i></span>
-          Form
+          Forms
         </p>
       </header>
       <div class="card-content">
         <form method="get">
           <div class="field is-horizontal">
-            <div class="field-label is-normal">
-              <label class="label">Name of the Organisation or Company</label>
-            </div>
-            <div class="field-body">
-              <div class="field">
-                <div class="control">
-                  <label>
-                    <input class="input is-danger" type="text" placeholder="e.g. Partnership opportunity">
-                  </label>
-                </div>
-                <p class="help is-danger">
-                  This field is required
-                </p>
-              </div>
-            </div>
-          </div>
-          <div class="field has-check is-horizontal">
-            <div class="field-label"><label class="label"></label></div>
+            <div class="field-label"><label class="label">Meeting with</label></div>
             <div class="field-body">
               <div class="field">
                 <div class="field is-grouped-multiline is-grouped">
-                  <div class="control"><label class="b-radio radio"><input type="radio" name="sample-radio" value="one">
+                  <div class="control"><label class="b-radio radio"><input type="radio" name="sample-radio" value="one" onclick="EnableDisableTB()" >
                     <span class="check"></span>
-                    <span class="control-label">Industrial</span>
-                  </label>
-                  </div>
-                  <div class="control"><label class="b-radio radio"><input type="radio" name="sample-radio" value="two">
+                    <span class="control-label">Student</span>
+                  </label></div>
+                  <div class="control"><label class="b-radio radio"><input type="radio" id="others" name="sample-radio" value="two" onclick="EnableDisableTB()" >
                     <span class="check"></span>
-                    <span class="control-label">Academic</span>
+                    <span class="control-label">Parent</span>
                   </label>
                   </div>
                 </div>
+
               </div>
             </div>
           </div>
           <div class="field is-horizontal">
             <div class="field-label is-normal">
-              <label class="label">From</label>
+              <label class="label">Date of meeting</label>
             </div>
             <div class="field-body">
               <div class="field">
@@ -329,145 +312,59 @@
                   <span class="icon is-small is-left"><i class="mdi mdi-account"></i></span>
                 </p>
               </div>
-              <div class="field-label is-normal">
-                <label class="label">To</label>
-              </div>
-              <div class="field">
-                <p class="control is-expanded has-icons-left has-icons-right">
-                  <label>
-                    <input class="input is-success" type="date">
-                  </label>
-                  <span class="icon is-small is-left"><i class="mdi mdi-mail"></i></span>
-                  <span class="icon is-small is-right"><i class="mdi mdi-check"></i></span>
-                </p>
-              </div>
-            </div>
-          </div>
-          <div class="field is-horizontal">
-            <div class="field-label is-normal">
-              <label class="label">Department</label>
-            </div>
-            <div class="field-body">
-              <div class="field is-narrow">
-                <div class="control">
-                  <div class="select is-fullwidth">
-                    <label>
-                      <select>
-                        <option hidden="hidden">Select a Department</option>
-                        <option>Business development</option>
-                        <option>Marketing</option>
-                        <option>Technical</option>
-                        <option>Research</option>
-                        <option>Volunteer</option>
-                        <option>Other</option>
-                      </select>
-                    </label>
-                  </div>
-                </div>
-              </div>
             </div>
           </div>
           <hr>
+
           <div class="field is-horizontal">
             <div class="field-label is-normal">
-              <label class="label">Position Held</label>
-            </div>
-            <div class="field-body">
-              <div class="field">
-                <div class="control">
-                  <label>
-                    <input class="input is-normal" type="text" placeholder="e.g. Team Lead">
-                  </label>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="field is-horizontal">
-            <div class="field-label is-normal">
-              <label class="label">Person of Contact</label>
+              <label class="label">Purpose</label>
             </div>
             <div class="field-body">
               <div class="field">
                 <p class="control is-expanded has-icons-left">
                   <label>
-                    <input class="input" type="text" placeholder="Name">
+                    <input class="input" type="text">
                   </label>
-                  <span class="icon is-small is-left"><i class="mdi mdi-account"></i></span>
+
                 </p>
               </div>
+
+            </div>
+          </div>
+
+
+          <div class="field is-horizontal">
+            <div class="field-label"><label class="label">Outcome</label></div>
+            <div class="field-body">
               <div class="field">
-                <p class="control is-expanded has-icons-left has-icons-right">
+                <p class="control is-expanded has-icons-left">
                   <label>
-                    <input class="input is-success" type="email" placeholder="Email" value="alex@smith.com">
+                    <input class="input" type="text" placeholder="">
                   </label>
-                  <span class="icon is-small is-left"><i class="mdi mdi-mail"></i></span>
-                  <span class="icon is-small is-right"><i class="mdi mdi-check"></i></span>
+
                 </p>
               </div>
             </div>
           </div>
-          <hr>
-          <div class="field has-check is-horizontal">
-            <div class="field-label"><label class="label">Atonement</label></div>
+          <div class="field is-horizontal">
+            <div class="field-label"><label class="label">Date</label></div>
             <div class="field-body">
               <div class="field">
-                <div class="field is-grouped-multiline is-grouped">
-                  <div class="control"><label class="b-radio radio"><input type="radio" name="sample-radio" value="one">
-                    <span class="check"></span>
-                    <span class="control-label">Paid</span>
+                <p class="control is-expanded has-icons-left">
+                  <label>
+                    <input class="input" type="date">
                   </label>
-                  </div>
-                  <div class="control"><label class="b-radio radio"><input type="radio" name="sample-radio" value="two">
-                    <span class="check"></span>
-                    <span class="control-label">Unpaid</span>
-                  </label>
-                  </div>
-                  <div class="control"><label class="b-radio radio"><input type="radio" name="sample-radio" value="two">
-                    <span class="check"></span>
-                    <span class="control-label">Compensated</span>
-                  </label>
-                  </div>
-                </div>
+                </p>
               </div>
-            </div>
-          </div>
-          <div class="field is-horizontal">
-            <div class="field-label"></div>
-            <div class="field-body">
-              <div class="field is-expanded">
-                <div class="field has-addons">
-                  <p class="control">
-                    <a class="button is-static">
-                      ₹
-                    </a>
-                  </p>
-                  <p class="control is-expanded">
-                    <label>
-                      <input class="input" type="number" placeholder="Amount">
-                    </label>
-                  </p>
-                </div>
-              </div>
+              <div class="field"></div>
+              <div class="field"></div>
+              <div class="field"></div>
+              <div class="field"></div>
             </div>
           </div>
           <hr>
-          <div class="field is-horizontal">
-            <div class="field-label is-normal"><label class="label">Upload your certificate</label></div>
-            <div class="field-body">
-              <div class="field">
-                <div class="field file">
-                  <label class="upload control">
-                    <a class="button is-primary">
-                      <span class="icon"><i class="mdi mdi-upload"></i></span>
-                      <span>Pick a file</span>
-                    </a>
-                    <input type="file">
-                  </label>
-                </div>
-              </div>
-            </div>
-          </div>
-          <hr>
+
           <div class="field is-horizontal">
             <div class="field-label">
               <!-- Left empty for spacing -->
@@ -489,7 +386,6 @@
               </div>
             </div>
           </div>
-          <hr>
         </form>
       </div>
     </div>
@@ -544,5 +440,16 @@
 
 <!-- Icons below are for Admin only. Feel free to use any icon pack. Docs: https://bulma.io/documentation/elements/icon/ -->
 <link rel="stylesheet" href="https://cdn.materialdesignicons.com/4.9.95/css/materialdesignicons.min.css">
+<script type="text/javascript">
+  function EnableDisableTB() {
+    const others = document.getElementById("others");
+    const otherlan = document.getElementById("otherlan");
+    otherlan.disabled = !others.checked;
+    otherlan.value="";
+    if (!otherlan.disabled) {
+      otherlan.focus();
+    }
+  }
+</script>
 </body>
 </html>

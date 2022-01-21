@@ -116,7 +116,7 @@
       <p class="menu-label">General</p>
       <ul class="menu-list">
         <li>
-          <a href="Dashboard.html" class="has-icon">
+          <a href="index.html" class="has-icon">
             <span class="icon"><i class="mdi mdi-desktop-mac"></i></span>
             <span class="menu-item-label">Dashboard</span>
           </a>
@@ -519,27 +519,27 @@
 <link rel="stylesheet" href="https://cdn.materialdesignicons.com/4.9.95/css/materialdesignicons.min.css">
 <script type="text/javascript">
   function EnableDisableTB() {
-    var others = document.getElementById("others");
-    var otherlan = document.getElementById("otherlan");
-    otherlan.disabled = others.checked ? false : true;
+    const others = document.getElementById("others");
+    const otherlan = document.getElementById("otherlan");
+    otherlan.disabled = !others.checked;
     otherlan.value="";
     if (!otherlan.disabled) {
       otherlan.focus();
     }
   }
   function EnableDisableTB1() {
-    var others1 = document.getElementById("others1");
-    var otherlan1 = document.getElementById("otherlan1");
-    otherlan1.disabled = others1.checked ? false : true;
+    const others1 = document.getElementById("others1");
+    const otherlan1 = document.getElementById("otherlan1");
+    otherlan1.disabled = !others1.checked;
     otherlan1.value="";
     if (!otherlan1.disabled) {
       otherlan1.focus();
     }
   }
   function EnableDisableTB2() {
-    var others2 = document.getElementById("others2");
-    var otherlan2 = document.getElementById("otherlan2");
-    otherlan2.disabled = others2.checked ? false : true;
+    const others2 = document.getElementById("others2");
+    const otherlan2 = document.getElementById("otherlan2");
+    otherlan2.disabled = !others2.checked;
     otherlan2.value = "";
     if (!otherlan2.disabled) {
       otherlan2.focus();

@@ -237,11 +237,11 @@ Gettext = function (args) {
     this.locale_data    = undefined;
 
     // set options
-    var options = [ "domain", "locale_data" ];
-    if (this.isValidObject(args)) {
-        for (var i in args) {
-            for (var j=0; j<options.length; j++) {
-                if (i == options[j]) {
+  const options = ["domain", "locale_data"];
+  if (this.isValidObject(args)) {
+        for (const i in args) {
+            for (let j=0; j<options.length; j++) {
+                if (i === options[j]) {
                     // don't set it if it's null or undefined
                     if (this.isValidObject(args[i]))
                         this[i] = args[i];
@@ -276,20 +276,20 @@ Gettext.prototype.try_load_lang = function() {
 
     // try loading from JSON
     // get lang links
-    var lang_link = this.get_lang_refs();
+  const lang_link = this.get_lang_refs();
 
-    if (typeof(lang_link) == 'object' && lang_link.length > 0) {
+  if (typeof(lang_link) == 'object' && lang_link.length > 0) {
         // NOTE: there will be a delay here, as this is async.
         // So, any i18n calls made right after page load may not
         // get translated.
         // XXX: we may want to see if we can "fix" this behavior
         for (var i=0; i<lang_link.length; i++) {
             var link = lang_link[i];
-            if (link.type == 'application/json') {
+            if (link.type === 'application/json') {
                 if (! this.try_load_lang_json(link.href) ) {
                     throw new Error("Error: Gettext 'try_load_lang_json' failed. Unable to exec xmlhttprequest for link ["+link.href+"]");
                 }
-            } else if (link.type == 'application/x-po') {
+            } else if (link.type === 'application/x-po') {
                 if (! this.try_load_lang_po(link.href) ) {
                     throw new Error("Error: Gettext 'try_load_lang_po' failed. Unable to exec xmlhttprequest for link ["+link.href+"]");
                 }
@@ -310,28 +310,29 @@ Gettext.prototype.try_load_lang = function() {
 //              msgid : [ msgid_plural, msgstr, msgstr_plural ],
 //          },
 Gettext.prototype.parse_locale_data = function(locale_data) {
-    if (typeof(Gettext._locale_data) == 'undefined') {
+    let domain;
+  if (typeof(Gettext._locale_data) == 'undefined') {
         Gettext._locale_data = { };
     }
 
     // suck in every domain defined in the supplied data
-    for (var domain in locale_data) {
+    for (domain in locale_data) {
         // skip empty specs (flexibly)
         if ((! locale_data.hasOwnProperty(domain)) || (! this.isValidObject(locale_data[domain])))
             continue;
         // skip if it has no msgid's
-        var has_msgids = false;
-        for (var msgid in locale_data[domain]) {
+      let has_msgids = false;
+      for (const msgid in locale_data[domain]) {
             has_msgids = true;
             break;
         }
         if (! has_msgids) continue;
 
         // grab shortcut to data
-        var data = locale_data[domain];
+      const data = locale_data[domain];
 
-        // if they specifcy a blank domain, default to "messages"
-        if (domain == "") domain = "messages";
+      // if they specifcy a blank domain, default to "messages"
+        if (domain === "") domain = "messages";
         // init the data structure
         if (! this.isValidObject(Gettext._locale_data[domain]) )
             Gettext._locale_data[domain] = { };
@@ -340,12 +341,12 @@ Gettext.prototype.parse_locale_data = function(locale_data) {
         if (! this.isValidObject(Gettext._locale_data[domain].msgs) )
             Gettext._locale_data[domain].msgs = { };
 
-        for (var key in data) {
-            if (key == "") {
-                var header = data[key];
-                for (var head in header) {
-                    var h = head.toLowerCase();
-                    Gettext._locale_data[domain].head[h] = header[head];
+        for (const key in data) {
+            if (key === "") {
+              const header = data[key];
+              for (const head in header) {
+                const h = head.toLowerCase();
+                Gettext._locale_data[domain].head[h] = header[head];
                 }
             } else {
                 Gettext._locale_data[domain].msgs[key] = data[key];
@@ -354,28 +355,28 @@ Gettext.prototype.parse_locale_data = function(locale_data) {
     }
 
     // build the plural forms function
-    for (var domain in Gettext._locale_data) {
+    for (domain in Gettext._locale_data) {
         if (this.isValidObject(Gettext._locale_data[domain].head['plural-forms']) &&
             typeof(Gettext._locale_data[domain].head.plural_func) == 'undefined') {
             // untaint data
-            var plural_forms = Gettext._locale_data[domain].head['plural-forms'];
-            var pf_re = new RegExp('^(\\s*nplurals\\s*=\\s*[0-9]+\\s*;\\s*plural\\s*=\\s*(?:\\s|[-\\?\\|&=!<>+*/%:;a-zA-Z0-9_\(\)])+)', 'm');
-            if (pf_re.test(plural_forms)) {
+          const plural_forms = Gettext._locale_data[domain].head['plural-forms'];
+          const pf_re = new RegExp('^(\\s*nplurals\\s*=\\s*[0-9]+\\s*;\\s*plural\\s*=\\s*(?:\\s|[-\\?\\|&=!<>+*/%:;a-zA-Z0-9_\(\)])+)', 'm');
+          if (pf_re.test(plural_forms)) {
                 //ex english: "Plural-Forms: nplurals=2; plural=(n != 1);\n"
                 //pf = "nplurals=2; plural=(n != 1);";
                 //ex russian: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10< =4 && (n%100<10 or n%100>=20) ? 1 : 2)
                 //pf = "nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2)";
 
-                var pf = Gettext._locale_data[domain].head['plural-forms'];
-                if (! /;\s*$/.test(pf)) pf = pf.concat(';');
+            let pf = Gettext._locale_data[domain].head['plural-forms'];
+            if (! /;\s*$/.test(pf)) pf = pf.concat(';');
                 /* We used to use eval, but it seems IE has issues with it.
                  * We now use "new Function", though it carries a slightly
                  * bigger performance hit.
                 var code = 'function (n) { var plural; var nplurals; '+pf+' return { "nplural" : nplurals, "plural" : (plural === true ? 1 : plural ? plural : 0) }; };';
                 Gettext._locale_data[domain].head.plural_func = eval("("+code+")");
                 */
-                var code = 'var plural; var nplurals; '+pf+' return { "nplural" : nplurals, "plural" : (plural === true ? 1 : plural ? plural : 0) };';
-                Gettext._locale_data[domain].head.plural_func = new Function("n", code);
+            const code = 'var plural; var nplurals; ' + pf + ' return { "nplural" : nplurals, "plural" : (plural === true ? 1 : plural ? plural : 0) };';
+            Gettext._locale_data[domain].head.plural_func = new Function("n", code);
             } else {
                 throw new Error("Syntax error in language file. Plural-Forms header is invalid ["+plural_forms+"]");
             }
@@ -383,13 +384,13 @@ Gettext.prototype.parse_locale_data = function(locale_data) {
         // default to english plural form
         } else if (typeof(Gettext._locale_data[domain].head.plural_func) == 'undefined') {
             Gettext._locale_data[domain].head.plural_func = function (n) {
-                var p = (n != 1) ? 1 : 0;
+                var p = (n !== 1) ? 1 : 0;
                 return { 'nplural' : 2, 'plural' : p };
                 };
         } // else, plural_func already created
     }
 
-    return;
+
 };
 
 
@@ -416,10 +417,10 @@ Gettext.prototype.try_load_lang_po = function(uri) {
 };
 
 Gettext.prototype.uri_basename = function(uri) {
-    var rv;
-    if (rv = uri.match(/^(.*\/)?(.*)/)) {
-        var ext_strip;
-        if (ext_strip = rv[2].match(/^(.*)\..+$/))
+  let rv;
+  if (rv === uri.match(/^(.*\/)?(.*)/)) {
+    let ext_strip;
+    if (ext_strip === rv[2].match(/^(.*)\..+$/))
             return ext_strip[1];
         else
             return rv[2];
@@ -429,34 +430,37 @@ Gettext.prototype.uri_basename = function(uri) {
 };
 
 Gettext.prototype.parse_po = function(data) {
-    var rv = {};
-    var buffer = {};
-    var lastbuffer = "";
-    var errors = [];
-    var lines = data.split("\n");
-    for (var i=0; i<lines.length; i++) {
+  let trans;
+  let msgid_plural;
+  let msg_ctxt_id;
+  let i;
+  const rv = {};
+  let buffer = {};
+  let lastbuffer = "";
+  const errors = [];
+  const lines = data.split("\n");
+  for (i = 0; i<lines.length; i++) {
         // chomp
-        lines[i] = lines[i].replace(/(\n|\r)+$/, '');
+        lines[i] = lines[i].replace(/([\n\r])+$/, '');
 
-        var match;
+    let match;
 
-        // Empty line / End of an entry.
+    // Empty line / End of an entry.
         if (/^$/.test(lines[i])) {
             if (typeof(buffer['msgid']) != 'undefined') {
-                var msg_ctxt_id = (typeof(buffer['msgctxt']) != 'undefined' &&
+                msg_ctxt_id = (typeof(buffer['msgctxt']) != 'undefined' &&
                                    buffer['msgctxt'].length) ?
                                   buffer['msgctxt']+Gettext.context_glue+buffer['msgid'] :
                                   buffer['msgid'];
-                var msgid_plural = (typeof(buffer['msgid_plural']) != 'undefined' &&
+                msgid_plural = (typeof(buffer['msgid_plural']) != 'undefined' &&
                                     buffer['msgid_plural'].length) ?
                                    buffer['msgid_plural'] :
                                    null;
 
                 // find msgstr_* translations and push them on
-                var trans = [];
+                trans = [];
                 for (var str in buffer) {
-                    var match;
-                    if (match = str.match(/^msgstr_(\d+)/))
+                    if (match === str.match(/^msgstr_(\d+)/))
                         trans[parseInt(match[1])] = buffer[str];
                 }
                 trans.unshift(msgid_plural);
@@ -471,35 +475,35 @@ Gettext.prototype.parse_po = function(data) {
 
         // comments
         } else if (/^#/.test(lines[i])) {
-            continue;
+
 
         // msgctxt
-        } else if (match = lines[i].match(/^msgctxt\s+(.*)/)) {
+        } else if (match === lines[i].match(/^msgctxt\s+(.*)/)) {
             lastbuffer = 'msgctxt';
             buffer[lastbuffer] = this.parse_po_dequote(match[1]);
 
         // msgid
-        } else if (match = lines[i].match(/^msgid\s+(.*)/)) {
+        } else if (match === lines[i].match(/^msgid\s+(.*)/)) {
             lastbuffer = 'msgid';
             buffer[lastbuffer] = this.parse_po_dequote(match[1]);
 
         // msgid_plural
-        } else if (match = lines[i].match(/^msgid_plural\s+(.*)/)) {
+        } else if (match === lines[i].match(/^msgid_plural\s+(.*)/)) {
             lastbuffer = 'msgid_plural';
             buffer[lastbuffer] = this.parse_po_dequote(match[1]);
 
         // msgstr
-        } else if (match = lines[i].match(/^msgstr\s+(.*)/)) {
+        } else if (match === lines[i].match(/^msgstr\s+(.*)/)) {
             lastbuffer = 'msgstr_0';
             buffer[lastbuffer] = this.parse_po_dequote(match[1]);
 
         // msgstr[0] (treak like msgstr)
-        } else if (match = lines[i].match(/^msgstr\[0\]\s+(.*)/)) {
+        } else if (match === lines[i].match(/^msgstr\[0\]\s+(.*)/)) {
             lastbuffer = 'msgstr_0';
             buffer[lastbuffer] = this.parse_po_dequote(match[1]);
 
         // msgstr[n]
-        } else if (match = lines[i].match(/^msgstr\[(\d+)\]\s+(.*)/)) {
+        } else if (match === lines[i].match(/^msgstr\[(\d+)\]\s+(.*)/)) {
             lastbuffer = 'msgstr_'+match[1];
             buffer[lastbuffer] = this.parse_po_dequote(match[2]);
 
@@ -516,18 +520,18 @@ Gettext.prototype.parse_po = function(data) {
 
     // handle the final entry
     if (typeof(buffer['msgid']) != 'undefined') {
-        var msg_ctxt_id = (typeof(buffer['msgctxt']) != 'undefined' &&
-                           buffer['msgctxt'].length) ?
-                          buffer['msgctxt']+Gettext.context_glue+buffer['msgid'] :
-                          buffer['msgid'];
-        var msgid_plural = (typeof(buffer['msgid_plural']) != 'undefined' &&
-                            buffer['msgid_plural'].length) ?
-                           buffer['msgid_plural'] :
-                           null;
+      msg_ctxt_id = (typeof (buffer['msgctxt']) != 'undefined' &&
+        buffer['msgctxt'].length) ?
+        buffer['msgctxt'] + Gettext.context_glue + buffer['msgid'] :
+        buffer['msgid'];
+      msgid_plural = (typeof (buffer['msgid_plural']) != 'undefined' &&
+        buffer['msgid_plural'].length) ?
+        buffer['msgid_plural'] :
+        null;
 
-        // find msgstr_* translations and push them on
-        var trans = [];
-        for (var str in buffer) {
+      // find msgstr_* translations and push them on
+      trans = [];
+      for (var str in buffer) {
             var match;
             if (match = str.match(/^msgstr_(\d+)/))
                 trans[parseInt(match[1])] = buffer[str];
@@ -547,7 +551,7 @@ Gettext.prototype.parse_po = function(data) {
     if (rv[""] && rv[""][1]) {
         var cur = {};
         var hlines = rv[""][1].split(/\\n/);
-        for (var i=0; i<hlines.length; i++) {
+        for (i = 0; i<hlines.length; i++) {
             if (! hlines.length) continue;
 
             var pos = hlines[i].indexOf(':', 0);
@@ -1251,7 +1255,7 @@ bin/po2json requires perl, and the perl modules Locale::PO and JSON.
 =head1 SEE ALSO
 
 bin/po2json (included),
-examples/normal/Dashboard.html,
+examples/normal/index.html,
 examples/wrapper/i18n.html, examples/wrapper/i18n.js,
 Locale::gettext_pp(3pm), POSIX(3pm), gettext(1), gettext(3)
 
