@@ -2564,7 +2564,7 @@ html {
   -webkit-font-smoothing: antialiased;
   min-width: 300px;
   overflow-x: hidden;
-  overflow-y: scroll;
+  overflow-y: auto;
   text-rendering: optimizeLegibility;
 }
 
@@ -8173,6 +8173,18 @@ body.has-navbar-fixed-bottom {
   padding-bottom: 3.25rem;
 }
 
+html::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+html::-webkit-scrollbar-thumb {
+  border-radius: 20px;
+  background: rgba(90, 90, 90);
+}
+html::-webkit-scrollbar-track {
+  background: rgba(0, 0, 0, 0.2);
+}
+
 .navbar-brand,
 .navbar-tabs {
   align-items: stretch;
@@ -13687,6 +13699,17 @@ nav.navbar .navbar-item .control .input::placeholder {
   aside.aside.is-expanded .menu-list li.is-active ul {
     display: block;
   }
+  aside::-webkit-scrollbar {
+    width: 8px;
+    height: 10px;
+  }
+  aside::-webkit-scrollbar-thumb {
+    border-radius: 20px;
+    background: rgba(90, 90, 90);
+  }
+  aside::-webkit-scrollbar-track {
+    background: rgba(0, 0, 0, 0.2);
+  }
 }
 
 aside.aside {
@@ -13699,6 +13722,7 @@ aside.aside {
   padding: 0;
   box-shadow: none;
   background: #2e323a;
+  overflow-y: scroll;
 }
 
 aside.aside .aside-tools {

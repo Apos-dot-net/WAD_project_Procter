@@ -161,37 +161,28 @@
           </a>
         </li>
         <li>
-          <a href="SoftSkill_Placement.html" class="has-icon">
+          <a href="SoftSkillsTraining.html" class="has-icon">
+            <span class="icon"><i class="mdi mdi-dumbbell"></i></span>
+            <span class="menu-item-label">Soft-Skills Training</span>
+          </a>
+        </li>
+        <li>
+          <a href="Placements.html" class="has-icon">
             <span class="icon"><i class="mdi mdi-chair-school"></i></span>
-            <span class="menu-item-label">Soft-Skill training <br> and Placement</span>
+            <span class="menu-item-label">Placement</span>
           </a>
         </li>
         <li>
           <a href="Participation.html" class="has-icon is-active">
-            <span class="icon"><i class="mdi mdi-rowing"></i></span>
+            <span class="icon"><i class="mdi mdi-bike"></i></span>
             <span class="menu-item-label">Student Leave record</span>
           </a>
         </li>
         <li>
-          <a class="has-icon has-dropdown-icon">
+          <a href="Absentees.html" class="has-icon">
             <span class="icon"><i class="mdi mdi-account-alert"></i></span>
             <span class="menu-item-label">Absentees</span>
-            <div class="dropdown-icon">
-              <span class="icon"><i class="mdi mdi-plus"></i></span>
-            </div>
           </a>
-          <ul>
-            <li>
-              <a href="">
-                <span>Leave Record</span>
-              </a>
-            </li>
-            <li>
-              <a href="">
-                <span>Student Deputation</span>
-              </a>
-            </li>
-          </ul>
         </li>
         <li>
           <a href="Memberships.html" class="has-icon">
@@ -206,25 +197,10 @@
           </a>
         </li>
         <li>
-          <a class="has-icon has-dropdown-icon">
+          <a href="ProctorMeeting.html" class="has-icon">
             <span class="icon"><i class="mdi mdi-human-greeting"></i></span>
             <span class="menu-item-label">Procter Meeting</span>
-            <div class="dropdown-icon">
-              <span class="icon"><i class="mdi mdi-plus"></i></span>
-            </div>
           </a>
-          <ul>
-            <li>
-              <a href="">
-                <span>With Student</span>
-              </a>
-            </li>
-            <li>
-              <a href="">
-                <span>With Parent</span>
-              </a>
-            </li>
-          </ul>
         </li>
       </ul>
       <p class="menu-label">About</p>
@@ -285,11 +261,11 @@
             <div class="field-body">
               <div class="field">
                 <div class="field is-grouped-multiline is-grouped">
-                  <div class="control"><label class="b-radio radio"><input type="radio" name="sample-radio" value="one" onclick="EnableDisableTB()" >
+                  <div class="control"><label class="b-radio radio"><input type="radio" name="absence_type" value="Leave" onclick="EnableDisableTB()" >
                     <span class="check"></span>
                     <span class="control-label">Leave</span>
                   </label></div>
-                  <div class="control"><label class="b-radio radio"><input type="radio" id="others" name="sample-radio" value="two" onclick="EnableDisableTB()" >
+                  <div class="control"><label class="b-radio radio"><input type="radio" id="others" name="absence_type" value="Deputation" onclick="EnableDisableTB()" >
                     <span class="check"></span>
                     <span class="control-label">Deputation</span>
                   </label>
@@ -305,21 +281,21 @@
             <div class="field-body">
               <div class="field">
                 <div class="field is-grouped-multiline is-grouped">
-                  <div class="control"><label class="b-radio radio"><input type="radio" name="sample-radio" value="one" onclick="EnableDisableTB1()">
+                  <div class="control"><label class="b-radio radio"><input type="radio" name="absence_type" value="Medical" onclick="EnableDisableTB1()">
                     <span class="check"></span>
                     <span class="control-label">Medical</span>
                   </label></div>
-                  <div class="control"><label class="b-radio radio"><input type="radio" name="sample-radio" value="two" onclick="EnableDisableTB1()">
+                  <div class="control"><label class="b-radio radio"><input type="radio" name="absence_type" value="Sports" onclick="EnableDisableTB1()">
                     <span class="check"></span>
                     <span class="control-label">Sports</span>
                   </label>
                   </div>
-                  <div class="control"><label class="b-radio radio"><input type="radio" name="sample-radio" value="two" onclick="EnableDisableTB1()">
+                  <div class="control"><label class="b-radio radio"><input type="radio" name="absence_type" value="Participation in Student club" onclick="EnableDisableTB1()">
                     <span class="check"></span>
                     <span class="control-label">Participation in Student club</span>
                   </label>
                   </div>
-                  <div class="control"><label class="b-radio radio"><input type="radio" name="sample-radio" value="two"  id="others1" onclick="EnableDisableTB1()">
+                  <div class="control"><label class="b-radio radio"><input type="radio" name="absence_type" value="Other"  id="others1" onclick="EnableDisableTB1()">
                     <span class="check"></span>
                     <span class="control-label">Other</span>
                   </label>

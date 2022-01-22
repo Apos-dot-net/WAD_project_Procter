@@ -161,37 +161,28 @@
           </a>
         </li>
         <li>
-          <a href="SoftSkill_Placement.html" class="has-icon">
+          <a href="SoftSkillsTraining.html" class="has-icon">
+            <span class="icon"><i class="mdi mdi-dumbbell"></i></span>
+            <span class="menu-item-label">Soft-Skills Training</span>
+          </a>
+        </li>
+        <li>
+          <a href="Placements.html" class="has-icon">
             <span class="icon"><i class="mdi mdi-chair-school"></i></span>
-            <span class="menu-item-label">Soft-Skill training <br> and Placement</span>
+            <span class="menu-item-label">Placement</span>
           </a>
         </li>
         <li>
           <a href="Participation.html" class="has-icon is-active">
-            <span class="icon"><i class="mdi mdi-rowing"></i></span>
+            <span class="icon"><i class="mdi mdi-bike-fast"></i></span>
             <span class="menu-item-label">Participation</span>
           </a>
         </li>
         <li>
-          <a class="has-icon has-dropdown-icon">
+          <a href="Absentees.html" class="has-icon">
             <span class="icon"><i class="mdi mdi-account-alert"></i></span>
             <span class="menu-item-label">Absentees</span>
-            <div class="dropdown-icon">
-              <span class="icon"><i class="mdi mdi-plus"></i></span>
-            </div>
           </a>
-          <ul>
-            <li>
-              <a href="">
-                <span>Leave Record</span>
-              </a>
-            </li>
-            <li>
-              <a href="">
-                <span>Student Deputation</span>
-              </a>
-            </li>
-          </ul>
         </li>
         <li>
           <a href="Memberships.html" class="has-icon">
@@ -206,25 +197,10 @@
           </a>
         </li>
         <li>
-          <a class="has-icon has-dropdown-icon">
+          <a href="ProctorMeeting.html" class="has-icon">
             <span class="icon"><i class="mdi mdi-human-greeting"></i></span>
             <span class="menu-item-label">Procter Meeting</span>
-            <div class="dropdown-icon">
-              <span class="icon"><i class="mdi mdi-plus"></i></span>
-            </div>
           </a>
-          <ul>
-            <li>
-              <a href="">
-                <span>With Student</span>
-              </a>
-            </li>
-            <li>
-              <a href="">
-                <span>With Parent</span>
-              </a>
-            </li>
-          </ul>
         </li>
       </ul>
       <p class="menu-label">About</p>
@@ -261,7 +237,7 @@
       <div class="level">
         <div class="level-left">
           <div class="level-item"><h1 class="title">
-            Forms
+            Participation in Competitions
           </h1></div>
         </div>
         <div class="level-right" style="display: none;">
@@ -281,19 +257,31 @@
       <div class="card-content">
         <form method="get">
           <div class="field is-horizontal">
-            <div class="field-label"><label class="label">Location of the competition</label></div>
+            <div class="field-label"><label class="label">Type of Competition</label></div>
             <div class="field-body">
               <div class="field">
                 <div class="field is-grouped-multiline is-grouped">
-                  <div class="control"><label class="b-radio radio"><input type="radio" name="sample-radio" value="one" onclick="EnableDisableTB()" >
+                  <div class="control"><label class="b-radio radio"><input type="radio" id="others" name="competition_type" value="Intra-Collage" onclick="EnableDisableTB()" >
                     <span class="check"></span>
-                    <span class="control-label">Inside the college</span>
+                    <span class="control-label">Intra-Collage</span>
                   </label></div>
-                  <div class="control"><label class="b-radio radio"><input type="radio" id="others" name="sample-radio" value="two" onclick="EnableDisableTB()" >
+                  <div class="control"><label class="b-radio radio"><input type="radio" name="competition_type" value="Inter-College" onclick="EnableDisableTB()" >
                     <span class="check"></span>
-                    <span class="control-label">Outside the college</span>
-                  </label>
-                  </div>
+                    <span class="control-label">Inter-College</span>
+                  </label></div>
+                  <div class="control"><label class="b-radio radio"><input type="radio" name="competition_type" value="State" onclick="EnableDisableTB()" >
+                    <span class="check"></span>
+                    <span class="control-label">State</span>
+                  </label></div>
+                  <div class="control"><label class="b-radio radio"><input type="radio" name="competition_type" value="National" onclick="EnableDisableTB()" >
+                    <span class="check"></span>
+                    <span class="control-label">National</span>
+                  </label></div>
+                  <div class="control"><label class="b-radio radio"><input type="radio" name="competition_type" value="National" onclick="EnableDisableTB()" >
+                    <span class="check"></span>
+                    <span class="control-label">National</span>
+                  </label></div>
+
                 </div>
 
                 <div class="field is-horizontal">
@@ -330,26 +318,27 @@
                   <label>
                     <input class="input" placeholder="link of the website">
                   </label>
-                  <span class="icon is-small is-left"><i class="mdi mdi-mail"></i></span>
+                  <span class="icon is-small is-left"><i class="mdi mdi-link"></i></span>
                 </p>
               </div>
             </div>
           </div>
+          <hr>
           <div class="field has-check is-horizontal">
             <div class="field-label"><label class="label">Type of Activity</label></div>
             <div class="field-body">
               <div class="field">
                 <div class="field is-grouped-multiline is-grouped">
-                  <div class="control"><label class="b-radio radio"><input type="radio" name="sample-radio" value="one" onclick="EnableDisableTB1()">
+                  <div class="control"><label class="b-radio radio"><input type="radio" name="activity_type" value="Co-curricular" onclick="EnableDisableTB1()">
                     <span class="check"></span>
                     <span class="control-label">Co-curricular</span>
                   </label></div>
-                  <div class="control"><label class="b-radio radio"><input type="radio" name="sample-radio" value="two" onclick="EnableDisableTB1()">
+                  <div class="control"><label class="b-radio radio"><input type="radio" name="activity_type" value="Extra Curricular" onclick="EnableDisableTB1()">
                     <span class="check"></span>
                     <span class="control-label">Extra Curricular</span>
                   </label>
                   </div>
-                  <div class="control"><label class="b-radio radio"><input type="radio" name="sample-radio" value="two"  id="others1" onclick="EnableDisableTB1()">
+                  <div class="control"><label class="b-radio radio"><input type="radio" name="activity_type" value="Other"  id="others1" onclick="EnableDisableTB1()">
                     <span class="check"></span>
                     <span class="control-label">Other</span>
                   </label>
@@ -365,21 +354,22 @@
               </div>
             </div>
           </div>
+          <hr>
           <div class="field has-check is-horizontal">
             <div class="field-label"><label class="label">Name of Association</label></div>
             <div class="field-body">
               <div class="field">
                 <div class="field is-grouped-multiline is-grouped">
-                  <div class="control"><label class="b-radio radio"><input type="radio" name="sample-radio" value="one" onclick= "EnableDisableTB2()">
+                  <div class="control"><label class="b-radio radio"><input type="radio" name="competition_association" value="Participant" onclick= "EnableDisableTB2()">
                     <span class="check"></span>
                     <span class="control-label">Participant</span>
                   </label></div>
-                  <div class="control"><label class="b-radio radio"><input type="radio" name="sample-radio" value="two" onclick="EnableDisableTB2()" >
+                  <div class="control"><label class="b-radio radio"><input type="radio" name="competition_association" value="Volunteer" onclick="EnableDisableTB2()" >
                     <span class="check"></span>
                     <span class="control-label">Volunteer</span>
                   </label>
                   </div>
-                  <div class="control"><label class="b-radio radio"><input type="radio" name="sample-radio" value="two" onclick="EnableDisableTB2()" id="others2">
+                  <div class="control"><label class="b-radio radio"><input type="radio" name="competition_association" value="Other" onclick="EnableDisableTB2()" id="others2">
                     <span class="check"></span>
                     <span class="control-label">Other</span>
                   </label>
@@ -395,6 +385,7 @@
               </div>
             </div>
           </div>
+          <hr>
           <div class="field is-horizontal">
             <div class="field-label"><label class="label">Awards(if any)</label></div>
             <div class="field-body">
@@ -403,7 +394,7 @@
                   <label>
                     <input class="input" type="text" placeholder="Award">
                   </label>
-                  <span class="icon is-small is-left"><i class="mdi mdi-city"></i></span>
+                  <span class="icon is-small is-left"><i class="mdi mdi-trophy-outline"></i></span>
                 </p>
               </div>
             </div>
@@ -521,7 +512,7 @@
   function EnableDisableTB() {
     const others = document.getElementById("others");
     const otherlan = document.getElementById("otherlan");
-    otherlan.disabled = !others.checked;
+    otherlan.disabled = others.checked;
     otherlan.value="";
     if (!otherlan.disabled) {
       otherlan.focus();
