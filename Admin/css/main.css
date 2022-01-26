@@ -14070,6 +14070,20 @@ section.section.is-main-section {
   width: 40vw;
 }
 
+.modal-history-card{
+  width: auto !important;
+}
+
+@media only screen and (max-width: 1024px) {
+  .modal-card {
+    width: auto;
+    -webkit-transform: scale(0.9);
+    -moz-transform: scale(0.9);
+    -ms-transform: scale(0.9);
+    transform: scale(0.9);
+  }
+}
+
 .modal-card-foot {
   background-color: whitesmoke;
 }
