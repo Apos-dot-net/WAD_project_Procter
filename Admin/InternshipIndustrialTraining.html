@@ -356,17 +356,17 @@
             <div class="field-body">
               <div class="field">
                 <div class="field is-grouped-multiline is-grouped">
-                  <div class="control"><label class="b-radio radio"><input type="radio" name="atonement" value="Paid">
+                  <div class="control"><label class="b-radio radio"><input type="radio" name="atonement" value="Paid" onclick="EnableDisableTB()">
                     <span class="check"></span>
                     <span class="control-label">Paid</span>
                   </label>
                   </div>
-                  <div class="control"><label class="b-radio radio"><input type="radio" name="atonement" value="Unpaid">
+                  <div class="control"><label class="b-radio radio"><input type="radio" name="atonement" value="Unpaid" id="others" onclick="EnableDisableTB()">
                     <span class="check"></span>
                     <span class="control-label">Unpaid</span>
                   </label>
                   </div>
-                  <div class="control"><label class="b-radio radio"><input type="radio" name="atonement" value="Compensated">
+                  <div class="control"><label class="b-radio radio"><input type="radio" name="atonement" value="Compensated" onclick="EnableDisableTB()">
                     <span class="check"></span>
                     <span class="control-label">Compensated</span>
                   </label>
@@ -387,7 +387,7 @@
                   </p>
                   <p class="control is-expanded">
                     <label>
-                      <input class="input" type="number" placeholder="Amount">
+                      <input class="input" type="number" placeholder="Amount" id="otherlan" disabled="disabled">
                     </label>
                   </p>
                 </div>
@@ -535,6 +535,18 @@
     <button class="modal-close is-large jb-modal-close" aria-label="close"></button>
   </div>
 </div>
+
+<script>
+  function EnableDisableTB() {
+    const others = document.getElementById("others");
+    const otherlan = document.getElementById("otherlan");
+    otherlan.disabled = others.checked;
+    otherlan.value="";
+    if (!otherlan.disabled) {
+      otherlan.focus();
+    }
+  }
+</script>
 
 <!-- Scripts below are for Admin only -->
 <script type="text/javascript" src="js/main.min.js"></script>
