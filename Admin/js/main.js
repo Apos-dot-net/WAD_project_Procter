@@ -64,3 +64,17 @@ Array.from(document.getElementsByClassName('field')).forEach(function (el) {
     OthersInput.focus();
   }
 });
+
+Array.from(document.getElementsByTagName("form")).forEach(function(el) {
+  el.addEventListener("submit",function(ela) {
+      ela.preventDefault();
+      Array.from(el.getElementsByClassName("is-danger-passive"), function(e) {
+        if (!e.value) {
+          e.closest(".control").insertAdjacentHTML("beforeend", '<p class="help is-danger">This field is required</p>\n');
+          e.classList.toggle("is-danger-passive");
+          e.classList.toggle("is-danger")
+        }
+      })
+    }
+  )
+});
