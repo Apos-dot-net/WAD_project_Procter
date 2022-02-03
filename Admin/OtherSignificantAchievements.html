@@ -257,9 +257,10 @@
                     <div class="field">
                       <div class="control is-expanded has-icons-left">
                         <label>
-                          <input id="otherlan" disabled="disabled" class="input" type="text" placeholder="Name of the Institute">
+                          <input id="otherlan" disabled="disabled" class="input is-danger-passive" type="text" placeholder="Name of the Institute">
                         </label>
                         <span class="icon is-small is-left"><i class="mdi mdi-city"></i></span>
+                        <p class="help is-danger is-hidden"></p>
                       </div>
                     </div>
                   </div>
@@ -276,12 +277,10 @@
               <div class="field">
                 <div class="control">
                   <label>
-                    <input class="input is-danger" type="text" placeholder="E.g. district level football player">
+                    <input class="input is-danger-passive" type="text" placeholder="E.g. district level football player">
                   </label>
                 </div>
-                <p class="help is-danger">
-                  This field is required
-                </p>
+                <p class="help is-danger"></p>
               </div>
             </div>
           </div>
@@ -297,9 +296,10 @@
                       <span class="icon"><i class="mdi mdi-upload"></i></span>
                       <span>Pick a file</span>
                     </a>
-                    <input type="file">
+                    <input type="file" class="is-danger-passive">
                   </label>
                 </div>
+                <p class="help is-danger is-hidden"></p>
               </div>
             </div>
           </div>
@@ -426,6 +426,18 @@
     <button class="modal-close is-large jb-modal-close" aria-label="close"></button>
   </div>
 </div>
+
+<script type="text/javascript">
+  function EnableDisableTB() {
+    const others = document.getElementById("others");
+    const otherlan = document.getElementById("otherlan");
+    otherlan.disabled = others.checked;
+    otherlan.value="";
+    if (!otherlan.disabled) {
+      otherlan.focus();
+    }
+  }
+</script>
 
 <!-- Scripts below are for Admin only -->
 <script type="text/javascript" src="js/main.min.js"></script>

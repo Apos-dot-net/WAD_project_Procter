@@ -232,9 +232,10 @@
               <div class="field">
                 <div class="control is-expanded has-icons-left has-icons-right">
                   <label>
-                    <input class="input" type="text" placeholder="Eg, Cat">
+                    <input class="input is-danger-passive" type="text" placeholder="Eg, Cat">
                   </label>
                   <span class="icon is-small is-left"><i class="mdi mdi-rename-box"></i></span>
+                  <p class="help is-danger is-hidden"></p>
                 </div>
               </div>
             </div>
@@ -263,12 +264,10 @@
               <div class="field">
                 <div class="control">
                   <label>
-                    <input class="input is-danger" type="text" placeholder="Enter your results here">
+                    <input class="input is-danger-passive" type="text" placeholder="Enter your results here">
                   </label>
+                  <p class="help is-danger is-hidden"></p>
                 </div>
-                <p class="help is-danger">
-                  This field is required
-                </p>
               </div>
             </div>
           </div>
@@ -283,9 +282,10 @@
                       <span class="icon"><i class="mdi mdi-upload"></i></span>
                       <span>Pick a file</span>
                     </a>
-                    <input type="file">
+                    <input type="file" class="is-danger-passive">
                   </label>
                 </div>
+                <p class="help is-danger is-hidden"></p>
               </div>
             </div>
           </div>

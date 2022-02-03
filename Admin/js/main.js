@@ -67,13 +67,31 @@ Array.from(document.getElementsByClassName('field')).forEach(function (el) {
 
 /*Validation*/
 function errorHelp(el, str){
-  console.log('1')
-  const temp = el.closest('.control').querySelector('.help');
-  if(str){
-    temp.classList.remove('is-hidden');
-    temp.innerHTML = str;
-  }else if(!str && !temp.classList.contains('is-hidden')){
-    temp.classList.add('is-hidden')
+  try{
+    const temp = el.closest(("."+el.tagName.toLowerCase()).toString());
+    const tempHelp = temp.closest('.field').querySelector('.help');
+    if(str){
+      temp.classList.add('is-danger')
+      tempHelp.innerHTML = str
+      tempHelp.classList.remove('is-hidden');
+    }else if(!str && !temp.classList.contains('is-hidden')){
+      temp.classList.remove('is-danger')
+      tempHelp.classList.add('is-hidden')
+    }
+  }catch (all){
+
+  }finally {
+    const temp = el.closest('.control').firstElementChild;
+    const tempHelp = temp.closest('.field').parentElement.querySelector('.help');
+    console.log(temp.closest('.field'))
+    if(str){
+      temp.classList.add('is-danger')
+      tempHelp.innerHTML = str
+      tempHelp.classList.remove('is-hidden');
+    }else if(!str && !temp.classList.contains('is-hidden')){
+      temp.classList.remove('is-danger')
+      tempHelp.classList.add('is-hidden')
+    }
   }
 }
 // noinspection DuplicatedCode
@@ -81,11 +99,9 @@ Array.from(document.getElementsByTagName("form")).forEach(function(el) {
   el.addEventListener("submit",function(ela) {
     ela.preventDefault();
     Array.from(el.getElementsByClassName("is-danger-passive"), async function(e) {
-        if (!e.value && !e.classList.contains("is-danger")) {
-          e.classList.add("is-danger");
+        if (!e.value && !e.classList.contains("is-danger") && !e.disabled) {
           await errorHelp(e, 'This field is required')
-        } else if(e.value && e.classList.contains("is-danger")){
-          e.classList.remove("is-danger");
+        } else if((e.value || e.disabled) && e.classList.contains("is-danger")){
           await errorHelp(e);
         }
       })

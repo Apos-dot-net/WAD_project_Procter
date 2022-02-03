@@ -270,8 +270,9 @@
                   <div class="field">
                     <div class="control is-expanded has-icons-left has-icons-right">
                       <label>
-                        <input id="otherlan1" disabled="disabled"  class="input is-small" placeholder="Other">
+                        <input id="otherlan1" disabled="disabled" class="input is-small is-danger-passive" placeholder="Other">
                       </label>
+                      <p class="help is-danger is-hidden"></p>
                     </div>
                   </div>
                 </div>
@@ -285,11 +286,12 @@
             </div>
             <div class="field-body">
               <div class="field">
-                <div class="control is-expanded has-icons-left">
+                <div class="control is-expanded has-icons-left has-icons-right">
                   <label>
-                    <input class="input" type="date">
+                    <input class="input is-danger-passive" type="date">
                   </label>
                   <span class="icon is-small is-left"><i class="mdi mdi-account"></i></span>
+                  <p class="help is-danger is-hidden"></p>
                 </div>
               </div>
               <div class="field-label is-normal">
@@ -298,10 +300,10 @@
               <div class="field">
                 <div class="control is-expanded has-icons-left has-icons-right">
                   <label>
-                    <input class="input is-success" type="date">
+                    <input class="input is-danger-passive" type="date">
                   </label>
                   <span class="icon is-small is-left"><i class="mdi mdi-mail"></i></span>
-                  <span class="icon is-small is-right"><i class="mdi mdi-check"></i></span>
+                  <p class="help is-danger is-hidden"></p>
                 </div>
               </div>
             </div>
@@ -317,9 +319,10 @@
                       <span class="icon"><i class="mdi mdi-upload"></i></span>
                       <span>Pick a file</span>
                     </a>
-                    <input type="file">
+                    <input type="file" class="is-danger-passive">
                   </label>
                 </div>
+                <p class="help is-danger is-hidden"></p>
               </div>
             </div>
           </div>

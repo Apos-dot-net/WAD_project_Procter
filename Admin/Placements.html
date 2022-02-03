@@ -232,12 +232,10 @@
               <div class="field">
                 <div class="control">
                   <label>
-                    <input class="input is-danger" type="text" placeholder="e.g. Google Labs">
+                    <input class="input is-danger-passive" type="text" placeholder="e.g. Google Labs">
                   </label>
                 </div>
-                <p class="help is-danger">
-                  This field is required
-                </p>
+                <p class="help is-danger is-hidden"></p>
               </div>
             </div>
           </div>
@@ -247,11 +245,12 @@
             </div>
             <div class="field-body">
               <div class="field">
-                <div class="control is-expanded has-icons-left">
+                <div class="control is-expanded has-icons-left has-icons-right">
                   <label>
-                    <input class="input" type="date">
+                    <input class="input is-danger-passive" type="date">
                   </label>
                   <span class="icon is-small is-left"><i class="mdi mdi-account"></i></span>
+                  <p class="help is-danger is-hidden"></p>
                 </div>
               </div>
             </div>
@@ -266,8 +265,9 @@
               <div class="field">
                 <div class="control">
                   <label>
-                    <input class="input is-normal" type="text" placeholder="e.g. Team Lead">
+                    <input class="input is-normal is-danger-passive" type="text" placeholder="e.g. Team Lead">
                   </label>
+                  <p class="help is-danger is-hidden"></p>
                 </div>
               </div>
             </div>
@@ -280,18 +280,19 @@
               <div class="field">
                 <div class="control is-expanded has-icons-left">
                   <label>
-                    <input class="input" type="text" placeholder="Name">
+                    <input class="input is-danger-passive" type="text" placeholder="Name">
                   </label>
                   <span class="icon is-small is-left"><i class="mdi mdi-account"></i></span>
+                  <p class="help is-danger is-hidden"></p>
                 </div>
               </div>
               <div class="field">
                 <div class="control is-expanded has-icons-left has-icons-right">
                   <label>
-                    <input class="input is-success" type="email" placeholder="Email">
+                    <input class="input is-danger-passive" type="email" placeholder="Email">
                   </label>
                   <span class="icon is-small is-left"><i class="mdi mdi-mail"></i></span>
-                  <span class="icon is-small is-right"><i class="mdi mdi-check"></i></span>
+                  <p class="help is-danger is-hidden"></p>
                 </div>
               </div>
             </div>
@@ -312,8 +313,9 @@
                   </div>
                   <div class="control is-expanded">
                     <label>
-                      <input class="input" type="number" placeholder="Amount">
+                      <input class="input is-danger-passive" type="number" placeholder="Amount">
                     </label>
+                    <p class="help is-danger is-hidden"></p>
                   </div>
                 </div>
               </div>
@@ -330,9 +332,10 @@
                       <span class="icon"><i class="mdi mdi-upload"></i></span>
                       <span>Pick a file</span>
                     </a>
-                    <input type="file">
+                    <input type="file" class="is-danger-passive">
                   </label>
                 </div>
+                <p class="help is-danger is-hidden"></p>
               </div>
             </div>
           </div>

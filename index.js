@@ -7,6 +7,7 @@ const app = express();
 
 global.document = document;
 app.use(express.static("admin"))
+app.use('/Admin/img', express.static('images'))
 
 const $ = jQuery = require('jquery')(window);
 

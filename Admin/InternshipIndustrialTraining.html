@@ -249,7 +249,7 @@
                     <span class="control-label">Industrial</span>
                   </label>
                   </div>
-                  <div class="control"><label class="b-radio radio"><input type="radio" name="internship_type" value="Academic">
+                  <div class="control"><label class="b-radio radio"><input type="radio" name="internship_type" value="Academic" class="is-danger-passive">
                     <span class="check"></span>
                     <span class="control-label">Academic</span>
                   </label>
@@ -295,17 +295,18 @@
                 <div class="control">
                   <div class="select is-fullwidth">
                     <label>
-                      <select>
-                        <option hidden="hidden">Select a Department</option>
-                        <option>Business development</option>
-                        <option>Marketing</option>
-                        <option>Technical</option>
-                        <option>Research</option>
-                        <option>Volunteer</option>
-                        <option>Other</option>
+                      <select class="is-danger-passive">
+                        <option hidden="hidden" value="">Select a Department</option>
+                        <option value="Business development">Business development</option>
+                        <option value="Marketing">Marketing</option>
+                        <option value="Technical">Technical</option>
+                        <option value="Research">Research</option>
+                        <option value="Volunteer">Volunteer</option>
+                        <option value="Other">Other</option>
                       </select>
                     </label>
                   </div>
+                  <p class="help is-danger is-hidden"></p>
                 </div>
               </div>
             </div>
@@ -388,8 +389,9 @@
                   </div>
                   <div class="control is-expanded">
                     <label>
-                      <input class="input" type="number" placeholder="Amount" id="otherlan" disabled="disabled">
+                      <input class="input is-danger-passive" type="number" placeholder="Amount" id="otherlan" disabled="disabled">
                     </label>
+                    <p class="help is-danger is-hidden"></p>
                   </div>
                 </div>
               </div>
@@ -406,9 +408,10 @@
                       <span class="icon"><i class="mdi mdi-upload"></i></span>
                       <span>Pick a file</span>
                     </a>
-                    <input type="file">
+                    <input type="file" class="is-danger-passive">
                   </label>
                 </div>
+                <p class="help is-danger is-hidden"></p>
               </div>
             </div>
           </div>
@@ -550,7 +553,7 @@
 </script>
 
 <!-- Scripts below are for Admin only -->
-<script type="text/javascript" src="js/main.min.js"></script>
+<script type="text/javascript" src="js/main.js"></script>
 
 <!-- Icons below are for Admin only. Feel free to use any icon pack. Docs: https://bulma.io/documentation/elements/icon/ -->
 <link rel="stylesheet" href="https://cdn.materialdesignicons.com/4.9.95/css/materialdesignicons.min.css">
