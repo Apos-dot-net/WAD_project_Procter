@@ -65,14 +65,28 @@ Array.from(document.getElementsByClassName('field')).forEach(function (el) {
   }
 });
 
+/*Validation*/
+function errorHelp(el, str){
+  console.log('1')
+  const temp = el.closest('.control').querySelector('.help');
+  if(str){
+    temp.classList.remove('is-hidden');
+    temp.innerHTML = str;
+  }else if(!str && !temp.classList.contains('is-hidden')){
+    temp.classList.add('is-hidden')
+  }
+}
+// noinspection DuplicatedCode
 Array.from(document.getElementsByTagName("form")).forEach(function(el) {
   el.addEventListener("submit",function(ela) {
-      ela.preventDefault();
-      Array.from(el.getElementsByClassName("is-danger-passive"), function(e) {
-        if (!e.value) {
-          e.closest(".control").insertAdjacentHTML("beforeend", '<p class="help is-danger">This field is required</p>\n');
-          e.classList.toggle("is-danger-passive");
-          e.classList.toggle("is-danger")
+    ela.preventDefault();
+    Array.from(el.getElementsByClassName("is-danger-passive"), async function(e) {
+        if (!e.value && !e.classList.contains("is-danger")) {
+          e.classList.add("is-danger");
+          await errorHelp(e, 'This field is required')
+        } else if(e.value && e.classList.contains("is-danger")){
+          e.classList.remove("is-danger");
+          await errorHelp(e);
         }
       })
     }
