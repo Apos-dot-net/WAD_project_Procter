@@ -66,7 +66,8 @@ Array.from(document.getElementsByClassName('field')).forEach(function (el) {
 });
 
 /*Validation*/
-function errorHelp(el, str){
+
+function errorHelp(el, str = ""){
   const help = el.querySelector('.help')
   if(str) {
     help.innerHTML = str
@@ -81,7 +82,7 @@ function validateOptions(name) {
 
   for (let i = 0; i < runner.length; i++) {
     if (runner[i].checked) {
-      return true;
+      return runner[i];
     }
   }
   return false;
@@ -106,108 +107,150 @@ const ping = (url, timeout = 6000) => {
 
 // noinspection DuplicatedCode
 Array.from(document.getElementsByTagName("form")).forEach(function(el) {
-  el.addEventListener("submit",function(ela) {
-      ela.preventDefault();
-      Array.from(el.getElementsByClassName("is-danger-passive"), async function(e) {
+  el.addEventListener("submit",function(submit) {
+      submit.preventDefault();
+      let validity = true;
+      const valid = new Promise((resolve) => {
+        Array.from(el.getElementsByClassName("input"), async function(e) {
+          if(e.classList.contains("is-danger-passive")){
+            if(e.type === "text"){
+              if(!e.value && !e.disabled){
+                e.classList.add('is-danger');
+                errorHelp(e.closest(".control"), 'This Field is Required');
+                e.classList.add('apply-shake');
+              }else if(e.value){
+                e.classList.remove('is-danger');
+                errorHelp(e.closest(".control"));
+                return e;
+              }
+              await e.addEventListener('animationend', function (){
+                e.classList.remove('apply-shake');
+                return false;
+              })
 
-        if(e.type === "text"){
-          if(!e.value && !e.disabled){
-            e.classList.add('is-danger');
-            errorHelp(e.closest(".control"), 'This Field is Required');
-            e.classList.add('apply-shake');
-          }else if(e.value && e.classList.contains('is-danger')){
-            e.classList.remove('is-danger');
-            errorHelp(e.closest(".control"));
+            } else if(e.type === "radio"){
+              let rValue = validateOptions(e.name);
+              if(rValue){
+                e.classList.remove("is-danger");
+                errorHelp(e.closest(".control"));
+                return rValue;
+              } else if(!validateOptions(e.name)){
+                e.classList.add("is-danger");
+                e.closest(".field").classList.add("apply-shake");
+                errorHelp(e.closest(".control"), 'Choose an Option');
+              }
+              await e.closest(".field").addEventListener('animationend', function (){
+                e.closest(".field").classList.remove('apply-shake');
+                return false;
+              })
+
+            } else if(e.type === "date"){
+              if(!e.value){
+                e.classList.add("is-danger");
+                e.classList.add("apply-shake");
+                errorHelp(e.closest(".control"), 'This Field is Required')
+              }else if(e.value){
+                e.classList.remove("is-danger");
+                errorHelp(e.closest(".control"));
+                return e;
+              }
+              await e.addEventListener('animationend', function (){
+                e.classList.remove('apply-shake');
+                return false;
+              })
+
+            } else if(e.type === "file"){
+              if(!e.value){
+                e.classList.add("is-danger");
+                e.previousElementSibling.classList.add("is-danger");
+                e.previousElementSibling.classList.add("apply-shake");
+                errorHelp(e.closest(".field").parentElement, 'This Field is Required')
+              }else if(e.value){
+                e.classList.remove("is-danger");
+                e.previousElementSibling.classList.remove("is-danger");
+                errorHelp(e.closest(".field").parentElement);
+                return e;
+              }
+              await e.previousElementSibling.addEventListener('animationend', function (){
+                e.previousElementSibling.classList.remove('apply-shake');
+                return false;
+              })
+
+            } else if(e.type === "number"){
+              if(!e.value && !e.disabled){
+                e.classList.add("is-danger");
+                e.classList.add("apply-shake");
+                errorHelp(e.closest(".control"), 'This Field is Required')
+              }else if((e.value || e.disabled)){
+                e.classList.remove("is-danger");
+                errorHelp(e.closest(".control"));
+                return e;
+              }
+              await e.addEventListener('animationend', function (){
+                e.classList.remove('apply-shake');
+                return false;
+              })
+
+            } else if(e.tagName === "SELECT"){
+              if(!e.value){
+                e.classList.add("is-danger");
+                e.closest(".select").classList.add("is-danger");
+                e.closest(".select").classList.add("apply-shake");
+                errorHelp(e.closest(".control"), 'This Field is Required')
+              }else if(e.value){
+                e.classList.remove("is-danger");
+                e.closest(".select").classList.remove("is-danger");
+                errorHelp(e.closest(".control"));
+                return e;
+              }
+              await e.closest(".select").addEventListener('animationend', function (){
+                e.closest(".select").classList.remove('apply-shake');
+                return false;
+              })
+            } else if(e.type === "email"){
+              if(!e.value && !e.disabled){
+                e.classList.add('is-danger');
+                errorHelp(e.closest(".control"), 'This Field is Required');
+                e.classList.add('apply-shake');
+              }else if(e.value){
+                console.log(e.value.substring(e.value.indexOf('@') + 1))
+                e.classList.remove('is-danger');
+                errorHelp(e.closest(".control"));
+                return e;
+              }
+              await e.addEventListener('animationend', function (){
+                e.classList.remove('apply-shake');
+                return false;
+              })
+            }
+          } else {
+            return e;
           }
-          await e.addEventListener('animationend', function (){
-            e.classList.remove('apply-shake');
-          })
+        }).forEach(async function (e, index, array){
+          await e.then(result => {
+            try {
+              console.log(result.value);
+            } catch (Error) {
+              validity = false;
+            }
+          });
+          if (index === array.length -1) resolve();
+        })
+      });
 
-        } else if(e.type === "radio"){
-          if(validateOptions(e.name) && e.classList.contains("is-danger")){
-            e.classList.remove("is-danger");
-            errorHelp(e.closest(".control"));
-          } else if(!validateOptions(e.name)){
-            e.classList.add("is-danger");
-            e.closest(".field").classList.add("apply-shake");
-            errorHelp(e.closest(".control"), 'Choose an Option');
-          }
-          await e.closest(".field").addEventListener('animationend', function (){
-            e.closest(".field").classList.remove('apply-shake');
-          })
-
-        } else if(e.type === "date"){
-          if(!e.value){
-            e.classList.add("is-danger");
-            e.classList.add("apply-shake");
-            errorHelp(e.closest(".control"), 'This Field is Required')
-          }else if(e.value && e.classList.contains("is-danger")){
-            e.classList.remove("is-danger");
-            errorHelp(e.closest(".control"));
-          }
-          await e.addEventListener('animationend', function (){
-            e.classList.remove('apply-shake');
-          })
-
-        } else if(e.type === "file"){
-          if(!e.value){
-            e.classList.add("is-danger");
-            e.previousElementSibling.classList.add("is-danger");
-            e.previousElementSibling.classList.add("apply-shake");
-            errorHelp(e.closest(".field").parentElement, 'This Field is Required')
-          }else if(e.value && e.classList.contains("is-danger")){
-            e.classList.remove("is-danger");
-            e.previousElementSibling.classList.remove("is-danger");
-            errorHelp(e.closest(".field").parentElement);
-          }
-          await e.previousElementSibling.addEventListener('animationend', function (){
-            e.previousElementSibling.classList.remove('apply-shake');
-          })
-
-        } else if(e.type === "number"){
-          if(!e.value && !e.disabled){
-            e.classList.add("is-danger");
-            e.classList.add("apply-shake");
-            errorHelp(e.closest(".control"), 'This Field is Required')
-          }else if((e.value || e.disabled) && e.classList.contains("is-danger")){
-            e.classList.remove("is-danger");
-            errorHelp(e.closest(".control"));
-          }
-          await e.addEventListener('animationend', function (){
-            e.classList.remove('apply-shake');
-          })
-
-        } else if(e.tagName === "SELECT"){
-          if(!e.value){
-            e.classList.add("is-danger");
-            e.closest(".select").classList.add("is-danger");
-            e.closest(".select").classList.add("apply-shake");
-            errorHelp(e.closest(".control"), 'This Field is Required')
-          }else if(e.value && e.classList.contains("is-danger")){
-            e.classList.remove("is-danger");
-            e.closest(".select").classList.remove("is-danger");
-            errorHelp(e.closest(".control"));
-          }
-          await e.closest(".select").addEventListener('animationend', function (){
-            e.closest(".select").classList.remove('apply-shake');
-          })
-        } else if(e.type === "email"){
-          if(!e.value && !e.disabled){
-            e.classList.add('is-danger');
-            errorHelp(e.closest(".control"), 'This Field is Required');
-            e.classList.add('apply-shake');
-          }else if(e.value){
-            console.log(e.value.substring(e.value.indexOf('@') + 1))
-            e.classList.remove('is-danger');
-            errorHelp(e.closest(".control"));
-          }
-          await e.addEventListener('animationend', function (){
-            e.classList.remove('apply-shake');
-          })
-
-        }
-
-      })
-    }
+    valid.then(() => {
+        console.log(validity);
+      });
+   }
   )
+  el.addEventListener('reset', function (){
+    Array.from(el.getElementsByClassName('is-danger')).forEach(function(e){
+      if(e.classList.contains('help')){
+        e.classList.add('is-hidden');
+      } else {
+        e.classList.remove('is-danger');
+      }
+    })
+  })
 });
+
