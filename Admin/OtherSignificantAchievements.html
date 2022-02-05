@@ -231,10 +231,12 @@
             <div class="field-body">
               <div class="field">
                 <div class="field is-grouped-multiline is-grouped">
-                  <div class="control"><label class="b-radio radio"><input type="radio" id="others" name="achievement_degree" value="Intra-Collage" onclick="EnableDisableTB()" >
+                  <div class="control"><label class="b-radio radio"><input class="is-danger-passive" type="radio" id="others" name="achievement_degree" value="Intra-Collage" onclick="EnableDisableTB()" >
                     <span class="check"></span>
                     <span class="control-label">Intra-Collage</span>
-                  </label></div>
+                  </label>
+                    <p class="help is-danger is-hidden"></p>
+                  </div>
                   <div class="control"><label class="b-radio radio"><input type="radio" name="achievement_degree" value="Inter-College" onclick="EnableDisableTB()" >
                     <span class="check"></span>
                     <span class="control-label">Inter-College</span>
@@ -279,8 +281,8 @@
                   <label>
                     <input class="input is-danger-passive" type="text" placeholder="E.g. district level football player">
                   </label>
+                  <p class="help is-danger is-hidden"></p>
                 </div>
-                <p class="help is-danger"></p>
               </div>
             </div>
           </div>

@@ -229,10 +229,12 @@
             <div class="field-body">
               <div class="field">
                 <div class="field is-grouped-multiline is-grouped">
-                  <div class="control"><label class="b-radio radio"><input type="radio" name="absence_type" value="Leave" onclick="EnableDisableTB()" >
+                  <div class="control"><label class="b-radio radio"><input class="is-danger-passive" type="radio" name="absence_type" value="Leave" onclick="EnableDisableTB()" >
                     <span class="check"></span>
                     <span class="control-label">Leave</span>
-                  </label></div>
+                  </label>
+                    <p class="help is-danger is-hidden"></p>
+                  </div>
                   <div class="control"><label class="b-radio radio"><input type="radio" id="others" name="absence_type" value="Deputation" onclick="EnableDisableTB()" >
                     <span class="check"></span>
                     <span class="control-label">Deputation</span>
@@ -248,10 +250,12 @@
             <div class="field-body">
               <div class="field">
                 <div class="field is-grouped-multiline is-grouped">
-                  <div class="control"><label class="b-radio radio"><input type="radio" name="leave_reason" value="Medical" onclick="EnableDisableTB1()">
+                  <div class="control"><label class="b-radio radio"><input class="is-danger-passive" type="radio" name="leave_reason" value="Medical" onclick="EnableDisableTB1()">
                     <span class="check"></span>
                     <span class="control-label">Medical</span>
-                  </label></div>
+                  </label>
+                    <p class="help is-danger is-hidden"></p>
+                  </div>
                   <div class="control"><label class="b-radio radio"><input type="radio" name="leave_reason" value="Sports" onclick="EnableDisableTB1()">
                     <span class="check"></span>
                     <span class="control-label">Sports</span>

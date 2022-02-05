@@ -244,12 +244,13 @@
             <div class="field-body">
               <div class="field">
                 <div class="field is-grouped-multiline is-grouped">
-                  <div class="control"><label class="b-radio radio"><input type="radio" name="internship_type" value="Industrial">
+                  <div class="control"><label class="b-radio radio"><input type="radio" name="internship_type" value="Industrial" class="is-danger-passive">
                     <span class="check"></span>
                     <span class="control-label">Industrial</span>
                   </label>
+                    <p class="help is-danger is-hidden"></p>
                   </div>
-                  <div class="control"><label class="b-radio radio"><input type="radio" name="internship_type" value="Academic" class="is-danger-passive">
+                  <div class="control"><label class="b-radio radio"><input type="radio" name="internship_type" value="Academic">
                     <span class="check"></span>
                     <span class="control-label">Academic</span>
                   </label>
@@ -358,10 +359,11 @@
             <div class="field-body">
               <div class="field">
                 <div class="field is-grouped-multiline is-grouped">
-                  <div class="control"><label class="b-radio radio"><input type="radio" name="atonement" value="Paid" onclick="EnableDisableTB()">
+                  <div class="control"><label class="b-radio radio"><input type="radio" name="atonement" value="Paid" onclick="EnableDisableTB()" class="is-danger-passive">
                     <span class="check"></span>
                     <span class="control-label">Paid</span>
                   </label>
+                    <p class="help is-danger is-hidden"></p>
                   </div>
                   <div class="control"><label class="b-radio radio"><input type="radio" name="atonement" value="Unpaid" id="others" onclick="EnableDisableTB()">
                     <span class="check"></span>
@@ -553,7 +555,7 @@
 </script>
 
 <!-- Scripts below are for Admin only -->
-<script type="text/javascript" src="js/main.js"></script>
+<script type="text/javascript" src="js/main.min.js"></script>
 
 <!-- Icons below are for Admin only. Feel free to use any icon pack. Docs: https://bulma.io/documentation/elements/icon/ -->
 <link rel="stylesheet" href="https://cdn.materialdesignicons.com/4.9.95/css/materialdesignicons.min.css">
