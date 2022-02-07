@@ -22,9 +22,9 @@
       <a class="navbar-item is-hidden-desktop jb-aside-mobile-toggle">
         <span class="icon"><i class="mdi mdi-forwardburger mdi-24px"></i></span>
       </a>
-      <div class="navbar-item has-control">
+      <div class="navbar-item has-control has-icons-right">
         <div class="control"><label>
-          <input placeholder="Search everywhere..." class="input">
+          <input name="searchAll" placeholder="Search everywhere..." class="input">
         </label></div>
       </div>
     </div>
@@ -269,7 +269,7 @@
                 <div class="field-body">
                   <div class="field">
                     <div class="control">
-                      <button type="submit" class="button is-primary">
+                      <button onclick="this.form.submitted=this.value;" type="submit" class="button is-primary" value="Profile">
                         Submit
                       </button>
                     </div>

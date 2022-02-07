@@ -118,7 +118,7 @@ Array.from(document.getElementsByTagName("form")).forEach(function(el) {
                 e.classList.add('is-danger');
                 errorHelp(e.closest(".control"), 'This Field is Required');
                 e.classList.add('apply-shake');
-              }else if(e.value){
+              }else if((e.value || e.disabled)){
                 e.classList.remove('is-danger');
                 errorHelp(e.closest(".control"));
                 return e;
@@ -240,6 +240,7 @@ Array.from(document.getElementsByTagName("form")).forEach(function(el) {
 
     valid.then(() => {
         console.log(validity);
+        console.log(el.submitted)
       });
    }
   )

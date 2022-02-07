@@ -22,9 +22,9 @@
       <a class="navbar-item is-hidden-desktop jb-aside-mobile-toggle">
         <span class="icon"><i class="mdi mdi-forwardburger mdi-24px"></i></span>
       </a>
-      <div class="navbar-item has-control">
+      <div class="navbar-item has-control has-icons-right">
         <div class="control"><label>
-          <input placeholder="Search everywhere..." class="input">
+          <input name="searchAll" placeholder="Search everywhere..." class="input">
         </label></div>
       </div>
     </div>
@@ -232,7 +232,9 @@
                   <div class="control"><label class="b-radio radio"><input type="radio" id="others" name="competition_type" value="Intra-Collage" onclick="EnableDisableTB()" class="input is-danger-passive">
                     <span class="check"></span>
                     <span class="control-label">Intra-Collage</span>
-                  </label></div>
+                  </label>
+                    <p class="help is-danger is-hidden"></p>
+                  </div>
                   <div class="control"><label class="b-radio radio"><input type="radio" name="competition_type" value="Inter-College" onclick="EnableDisableTB()" >
                     <span class="check"></span>
                     <span class="control-label">Inter-College</span>
@@ -419,7 +421,7 @@
               <div class="field">
                 <div class="field is-grouped">
                   <div class="control">
-                    <button type="submit" class="button is-primary">
+                    <button onclick="this.form.submitted=this.value;" type="submit" class="button is-primary" value="Participation">
                       <span>Submit</span>
                     </button>
                   </div>
