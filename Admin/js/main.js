@@ -191,7 +191,7 @@ Array.from(document.getElementsByTagName("form")).forEach(function(el) {
                 return false;
               })
 
-            } else if(e.tagName === "SELECT"){
+            } else if(e.classList.contains("select")){
               if(!e.value){
                 e.classList.add("is-danger");
                 e.closest(".select").classList.add("is-danger");
