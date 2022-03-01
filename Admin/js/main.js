@@ -1,4 +1,14 @@
 "use strict"
+
+const mysql = require('mysql');
+const con = mysql.createConnection({
+  host: "localhost",
+  user: "root",
+  password: "12345",
+  database: "javatpoint"
+});
+
+
 /* Aside: submenus toggle */
 Array.from(document.getElementsByClassName('menu is-menu-main')).forEach(function (el) {
   Array.from(el.getElementsByClassName('has-dropdown-icon')).forEach(function (elA) {
@@ -87,23 +97,6 @@ function validateOptions(name) {
   }
   return false;
 }
-
-const ping = (url, timeout = 6000) => {
-  return new Promise((resolve, reject) => {
-    const urlRule = new RegExp('(https?|ftp|file)://[-A-Za-z0-9+&@#/%?=~_|!:,.;]+[-A-Za-z0-9+&@#/%=~_|]');
-    if (!urlRule.test(url)) reject('invalid url');
-    try {
-      fetch(url)
-        .then(() => resolve(true))
-        .catch(() => resolve(false));
-      setTimeout(() => {
-        resolve(false);
-      }, timeout);
-    } catch (e) {
-      reject(e);
-    }
-  });
-};
 
 // noinspection DuplicatedCode
 Array.from(document.getElementsByTagName("form")).forEach(function(el) {
@@ -213,7 +206,6 @@ Array.from(document.getElementsByTagName("form")).forEach(function(el) {
                 errorHelp(e.closest(".control"), 'This Field is Required');
                 e.classList.add('apply-shake');
               }else if(e.value){
-                console.log(e.value.substring(e.value.indexOf('@') + 1))
                 e.classList.remove('is-danger');
                 errorHelp(e.closest(".control"));
                 return e;
@@ -245,6 +237,7 @@ Array.from(document.getElementsByTagName("form")).forEach(function(el) {
    }
   )
   el.addEventListener('reset', function (){
+    console.log(document.getElementsByTagName('form'))
     Array.from(el.getElementsByClassName('is-danger')).forEach(function(e){
       if(e.classList.contains('help')){
         e.classList.add('is-hidden');
